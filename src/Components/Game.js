@@ -100,7 +100,7 @@ class Game extends Component {
                                 {gameStat == 1 ? <h1>You Won</h1> : gameStat == 0 ? <h1 className="text-center">You Lost</h1> :<div className="words" > {gameStat}</div>}
                             
                             <button
-                                className="btn btn-danger p-3"
+                                className="btn btn-danger p-3 mt-4"
                                 onClick={this.resetButton}>
                                 &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
                             </button>
