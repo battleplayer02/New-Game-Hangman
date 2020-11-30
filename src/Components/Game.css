@@ -9,3 +9,39 @@
     
 
 }
+
+
+.words{
+    text-align: center;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 20px;    
+    grid-template-columns: repeat(6,auto);
+}
+
+.score{
+    background-color: skyblue;
+    color: #000000;
+    font-weight: bolder;
+    width: fit-content;
+    padding: 15px;
+    border-radius: 25px;
+
+}
+
+.maingrid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.center{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-row: auto auto;
+}
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

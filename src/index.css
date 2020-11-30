@@ -1,7 +1,10 @@
 body {
   height: 100vh;
   background-image: url("./img/bg.png");
+  background-size: contain;
   margin: 0 0;
+  
+  
 }
 
 code {
