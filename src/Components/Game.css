@@ -1,0 +1,11 @@
+.Hangman{
+    width: 100%;
+    margin-top: 50px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    
+
+}

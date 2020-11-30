@@ -1,24 +1,53 @@
-import logo from './logo.svg';
 import './App.css';
+import balloon from "./img/Balloon_0.png";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Game from './Components/Game';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    //if
+    //main page '/'
+    // /game game 
+    <>
+      <Router>
+        <Switch>
+          
+          <Route path="/home">
+              <Game />
+          </Route>
+          <Route path="/">
+            
+          <div className="App">
+              <div className="wel__text">
+                <div class="animated-title">
+                  <div class="text-top">
+                    <div>
+                      <span>Welcome  </span>
+                      <span>To Hangman</span>
+                    </div>
+                  </div>
+                  <div class="text-bottom">
+                    <div>for the win!</div>
+                  </div>
+                </div>
+              </div>
+              <div id="buttonContainer">
+                <div id="sp"><a href="home">Start</a></div>
+              </div>
+
+              <div className="balloon btn-square wobble-horizontal">
+                <img src={balloon} height="280" width="170" alt="img not found" />
+              </div>
+            </div>
+
+
+          </Route>
+        </Switch>
+      </Router>
+    </>
+
   );
 }
 
