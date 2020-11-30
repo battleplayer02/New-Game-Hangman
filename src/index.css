@@ -4,7 +4,8 @@ body {
   background-size: contain;
   margin: 0 0;
   overflow: hidden;
-  background-repeat: repeat-x;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 code {
