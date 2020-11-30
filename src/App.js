@@ -19,7 +19,7 @@ function App() {
           </Route>
           <Route path="/">
             
-          <div className="App">
+          <div className="App hero-bkg-animated">
               <div className="wel__text">
                 <div class="animated-title">
                   <div class="text-top">
