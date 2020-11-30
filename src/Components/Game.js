@@ -33,6 +33,9 @@ class Game extends Component {
 
     handelGuess = (e) => {
         let letter = e.target.value;
+        if(letter == '?'){
+            letter = " ";
+        }
         this.setState(st => ({
             gussed: st.gussed.add(letter),
             mistake: st.mistake + (st.answer.includes(letter) ? 0 : 1),
@@ -40,7 +43,7 @@ class Game extends Component {
     }
 
     generateButtons = () => {
-        return "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("").map((letter, i) =>
+        return "abcdefghijklmnopqrstuvwxyz?".toUpperCase().split("").map((letter, i) =>
             <button
                 value={letter}
                 key={i}
@@ -93,9 +96,9 @@ class Game extends Component {
                         <div className="text-center">
                             <p style={{ fontWeight: "800", fontSize: "large" }}>Guess the programming language.</p>
 
-                            <div className="words" >
-                                {gameStat == 1 ? <h1>You Won</h1> : gameStat == 0 ? <h1>You Lost</h1> : gameStat}
-                            </div>
+                            
+                                {gameStat == 1 ? <h1>You Won</h1> : gameStat == 0 ? <h1 className="text-center">You Lost</h1> :<div className="words" > {gameStat}</div>}
+                            
                             <button
                                 className="btn btn-danger p-3"
                                 onClick={this.resetButton}>
