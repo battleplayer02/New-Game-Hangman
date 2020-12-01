@@ -2,10 +2,8 @@ import React from 'react'
 import "./Test.css";
 export default function Test() {
     return (
-        <div>
-            <div class="hero-bkg-animated">
-                <h1>Hero Headline</h1>
-            </div>
-        </div>
+        
+<p>Resize the browser window. When the width of this document is 600 pixels or less, the background-color is "lightblue", otherwise it is "lightgreen".</p>
+
     )
 }

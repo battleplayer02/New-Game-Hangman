@@ -1,9 +1,8 @@
-@media only screen and (max-width: 600px) {
-    
-}
+
+
 .Hangman{
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
     background: url("../img/SPOILER_WebBg202.png") ;
 }
 
@@ -47,3 +46,14 @@ img{
     margin-left: auto;
     margin-right: auto;
 }
+
+@media only screen and (max-width: 600px) {
+    .words{
+        text-align: center;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-gap: 10px;    
+        grid-template-columns: repeat(4,auto);
+    }
+  }
