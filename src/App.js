@@ -28,10 +28,9 @@ function App() {
               <div className="wel__text">
                 <div class="animated-title">
                   <div class="text-top">
-                    <div class='container'>
-                      <p class='typewriter'>I'm a
-                        <span class='typewriter-text' data-text='[ "photographer. ", "designer. ", "developer. " ]'></span>
-                      </p>
+                    <div>
+                      <span>Welcome  </span>
+                      <span>To Hangman</span>
                     </div>
                   </div>
                   <div class="text-bottom">
