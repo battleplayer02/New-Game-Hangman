@@ -1,6 +1,11 @@
-# The Hang Man Game
+# The Hang Man Game Using React
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+The Project is deployed on Heroku 
+URL: jio-hangman.herokuapp.com
+
+
 
 ## Available Scripts
 
