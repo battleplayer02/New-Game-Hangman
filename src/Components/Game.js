@@ -33,7 +33,7 @@ class Game extends Component {
 
     handelGuess = (e) => {
         let letter = e.target.value;
-        if(letter == '?'){
+        if(letter === '?'){
             letter = " ";
         }
         this.setState(st => ({
@@ -76,6 +76,7 @@ class Game extends Component {
 
         if (gameOver) {
             gameStat = 0;
+            document.querySelector("body").style.animation = false;
         }
 
         return (
@@ -85,7 +86,7 @@ class Game extends Component {
                     <div className=""> <div className="score">Wrong Guesses:&nbsp;{this.state.mistake} of {this.props.maxWrong}</div></div>
                     <div className="maingrid">
                         <div className="center">
-                            <div>
+                            <div id="balloon ">
                                 <img src={this.props.images[this.state.mistake]} alt="Not Found" height="350" width="220" />
                             </div>
                             <div style={{ fontSize: "30px", textAlign: "center", fontWeight: "500" }}>
@@ -95,9 +96,7 @@ class Game extends Component {
 
                         <div className="text-center">
                             <p style={{ fontWeight: "800", fontSize: "large" }}>Guess the programming language.</p>
-
-                            
-                                {gameStat == 1 ? <h1>You Won</h1> : gameStat == 0 ? <h1 className="text-center">You Lost</h1> :<div className="words" > {gameStat}</div>}
+                                {gameStat === 1 ? <h1>You Won</h1> : gameStat === 0 ? <h1 className="text-center">You Lost</h1> :<div className="words" > {gameStat}</div>}
                             
                             <button
                                 className="btn btn-danger p-3 mt-4"

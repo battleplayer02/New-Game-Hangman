@@ -126,3 +126,31 @@
   justify-content: center;
   align-items: center;
 }
+
+.typewriter {
+  font-family: sans-serif;
+  color: black;
+  padding-left: 30px;
+  display: block;
+  font-weight: 600;
+}
+.typewriter-text {
+  padding-right: 10px;
+  color: red;
+  border-right: solid red 7px;
+  text-transform: uppercase;
+  animation: cursor 1s ease-in-out infinite;
+  font-weight: bold;
+}
+@keyframes cursor {
+  from { border-color: red; }
+  to { border-color: transparent; }
+}
+
+@media (max-width: 767.98px) {
+  .typewriter { font-size: 35px; }
+}
+@media (min-width: 768px) {
+  .typewriter { font-size: 60px; }
+}
+

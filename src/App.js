@@ -3,6 +3,7 @@ import balloon from "./img/Balloon_0.png";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Game from './Components/Game';
+import Test from './Components/Test';
 
 function App() {
   return (
@@ -13,19 +14,24 @@ function App() {
     <>
       <Router>
         <Switch>
-          
+
           <Route path="/home">
-              <Game />
+            <Game />
           </Route>
+          <Route path="/test">
+            <Test />
+          </Route>
+
           <Route path="/">
-            
-          <div className="App">
+
+            <div className="App">
               <div className="wel__text">
                 <div class="animated-title">
                   <div class="text-top">
-                    <div>
-                      <span>Welcome  </span>
-                      <span>To Hangman</span>
+                    <div class='container'>
+                      <p class='typewriter'>I'm a
+                        <span class='typewriter-text' data-text='[ "photographer. ", "designer. ", "developer. " ]'></span>
+                      </p>
                     </div>
                   </div>
                   <div class="text-bottom">

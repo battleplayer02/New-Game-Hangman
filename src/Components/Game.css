@@ -1,15 +1,16 @@
+@media only screen and (max-width: 600px) {
+    
+}
 .Hangman{
     width: 100%;
     margin-top: 20px;
+    background: url("../img/SPOILER_WebBg202.png") ;
 }
 
 .center{
     display: flex;
     justify-content: center;
-    
-
 }
-
 
 .words{
     text-align: center;
@@ -17,22 +18,23 @@
     align-items: center;
     justify-content: center;
     grid-gap: 20px;    
-    grid-template-columns: repeat(6,auto);
+    grid-template-columns: repeat(13,auto);
 }
 
 .score{
-    background-color: skyblue;
+    background-color: transparent;
     color: #000000;
     font-weight: bolder;
-    width: fit-content;
+    text-align: center;
     padding: 15px;
     border-radius: 25px;
+    font-size: larger;
 
 }
 
 .maingrid{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 100%;
 }
 
 .center{
