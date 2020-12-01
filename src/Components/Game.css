@@ -47,6 +47,9 @@ img{
     margin-right: auto;
 }
 
+
+
+
 @media only screen and (max-width: 600px) {
     .words{
         text-align: center;

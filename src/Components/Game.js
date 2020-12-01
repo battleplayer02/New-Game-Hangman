@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import './Game.css';
 import { randWord } from '../Words.js';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-
 
 import step0 from '../img/0.png';
 import step1 from '../img/1.png';

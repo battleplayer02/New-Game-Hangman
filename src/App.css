@@ -154,3 +154,19 @@
   .typewriter { font-size: 60px; }
 }
 
+@media only screen and (max-width: 600px) {
+      
+#sp {
+  font-size: 30px;
+  font-weight: 600;
+  width: 50%;
+  height: 8vh;
+  margin: auto;
+  line-height: 50px;
+  text-align: center;
+  color: #64c4f0;
+  background-color: #fffafa;
+  border-radius: 20px;
+  cursor: pointer;
+}  
+}
