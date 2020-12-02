@@ -1,6 +1,5 @@
 import './App.css';
 import balloon from "./img/Balloon_0.png";
-
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Game from './Components/Game';
 import Test from './Components/Test';
@@ -27,13 +26,10 @@ function App() {
               <div className="wel__text">
                 <div class="animated-title">
                   <div class="text-top">
-                    <div className="card-header">
+                    <div>
                       <span>Welcome  </span>
                       <span>To Hangman</span>
                     </div>
-                  </div>
-                  <div class="text-bottom">
-                    <div>for the win!</div>
                   </div>
                 </div>
               </div>

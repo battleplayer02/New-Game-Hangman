@@ -105,7 +105,7 @@ class Game extends Component {
                     </Rodal> : <></>
                 }
                 <div className="Hangman container">
-                    <h1 className="text-center card-header" style={{ textDecoration: "underline" }}>Guess The Phrase</h1>
+                    <h1 className="text-center" style={{ textDecoration: "underline" }}>Guess The Phrase</h1>
                     <div className=""> <div className="score">Wrong Guesses:&nbsp;{this.state.mistake} of {this.props.maxWrong}</div></div>
                     <div className="maingrid ">
                         <div className="center">
@@ -117,8 +117,7 @@ class Game extends Component {
                             </div>
                         </div>
 
-                        <div className="text-center">
-                            <p style={{ fontWeight: "800", fontSize: "large" }}>Guess the Phrase.</p>
+                        <div className="text-center" style={{marginTop:"10px"}}>
                             {gameStat === 1 ? <h1>You Won</h1> : gameStat === 0 ? <h1 className="text-center">You Lost</h1> : <div className="words" > {gameStat}</div>}
                             {gameStat === 0 ?
                                 <button
