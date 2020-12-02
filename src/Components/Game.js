@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './Game.css';
 import { randWord } from '../Words.js';
 import won from "../img/original.gif";
-import lost from "../img/tenor.gif"
+import lost from "../img/tenor.gif";
 import Rodal from 'rodal';
 import 'rodal/lib/rodal.css';
 
@@ -98,21 +98,25 @@ class Game extends Component {
                 {        gameStat === 1 ?
                     <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} animation="rotate">
                         <div>
-                            <div className="typewriter-text1 text-danger" style={{ fontSize: "20px" }}>You Won the game of Hangman....!</div>
+                            <div className="typewriter-text1" style={{ fontSize: "20px" }}>You Won the game of Hangman....!</div>
                             <div>
                                 <img src={won} style={{ objectFit: "scale-down" }} height="80%" width="90%" alt="img not found" />
                             </div>
                         </div>
                     </Rodal>
-                    :
+                    :<></>
+                }
+                {
+                    
+                    gameStat===0?
                     <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} animation="rotate">
                         <div>
-                            <div className="typewriter-text1 text-danger" style={{ fontSize: "20px" ,color:"red"}}>You Lost the game of Hangman....!</div>
+                            <div className="typewriter-text1" style={{ fontSize: "20px" ,color:"red"}}>You Lost the game of Hangman....!</div>
                             <div>
-                                <img src={won} style={{ objectFit: "scale-down" }} height="80%" width="90%" alt="img not found" />
+                                <img src={lost} style={{ objectFit: "scale-down" }} height="50%" width="65%" alt="img not found" />
                             </div>
                         </div>
-                    </Rodal>
+                    </Rodal>:<></>
                 }
                 <div className="Hangman container">
                     <h1 className="text-center" style={{ textDecoration: "underline" }}>Guess The Phrase</h1>
