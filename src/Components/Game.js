@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Game.css';
 import { randWord } from '../Words.js';
 import won from "../img/original.gif";
+import lost from "../img/tenor.gif"
 import Rodal from 'rodal';
 import 'rodal/lib/rodal.css';
 
@@ -97,12 +98,21 @@ class Game extends Component {
                 {        gameStat === 1 ?
                     <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} animation="rotate">
                         <div>
-                            <div className="typewriter-text1 text-danger" style={{fontSize:"20px"}}>You Won the game of Hangman....!</div>
+                            <div className="typewriter-text1 text-danger" style={{ fontSize: "20px" }}>You Won the game of Hangman....!</div>
                             <div>
                                 <img src={won} style={{ objectFit: "scale-down" }} height="80%" width="90%" alt="img not found" />
                             </div>
                         </div>
-                    </Rodal> : <></>
+                    </Rodal>
+                    :
+                    <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} animation="rotate">
+                        <div>
+                            <div className="typewriter-text1 text-danger" style={{ fontSize: "20px" ,color:"red"}}>You Lost the game of Hangman....!</div>
+                            <div>
+                                <img src={won} style={{ objectFit: "scale-down" }} height="80%" width="90%" alt="img not found" />
+                            </div>
+                        </div>
+                    </Rodal>
                 }
                 <div className="Hangman container">
                     <h1 className="text-center" style={{ textDecoration: "underline" }}>Guess The Phrase</h1>
@@ -117,7 +127,7 @@ class Game extends Component {
                             </div>
                         </div>
 
-                        <div className="text-center" style={{marginTop:"10px"}}>
+                        <div className="text-center" style={{ marginTop: "10px" }}>
                             {gameStat === 1 ? <h1>You Won</h1> : gameStat === 0 ? <h1 className="text-center">You Lost</h1> : <div className="words" > {gameStat}</div>}
                             {gameStat === 0 ?
                                 <button
