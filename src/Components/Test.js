@@ -1,9 +1,36 @@
-import React from 'react'
-import "./Test.css";
-export default function Test() {
-    return (
-        
-<p>Resize the browser window. When the width of this document is 600 pixels or less, the background-color is "lightblue", otherwise it is "lightgreen".</p>
+import React from 'react';
+import Rodal from 'rodal';
+import balloon from "../img/tenor.gif";
 
-    )
+// include styles
+import 'rodal/lib/rodal.css';
+
+export default class Test extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { visible: false };
+  }
+
+  show() {
+    this.setState({ visible: true });
+  }
+
+  hide() {
+    this.setState({ visible: false });
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.show.bind(this)}>show</button>
+
+        <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} animation="rotate">
+          <div>
+              Content
+              <img src={balloon} style={{objectFit:"scale-down"}} height="100px" width="150px" alt="img not found" />
+          </div>
+        </Rodal>
+      </div>
+    );
+  }
 }

@@ -23,12 +23,11 @@ function App() {
           </Route>
 
           <Route path="/">
-
             <div className="App">
               <div className="wel__text">
                 <div class="animated-title">
                   <div class="text-top">
-                    <div>
+                    <div className="card-header">
                       <span>Welcome  </span>
                       <span>To Hangman</span>
                     </div>
@@ -43,11 +42,9 @@ function App() {
               </div>
 
               <div className="balloon btn-square wobble-horizontal">
-                <img src={balloon} height="280" width="170" alt="img not found" />
+                <img src={balloon} height="350" width="250" alt="img not found" />
               </div>
             </div>
-
-
           </Route>
         </Switch>
       </Router>

@@ -12,7 +12,8 @@ class Game extends Component {
 
     static defaultProps = {
         maxWrong: 4,
-        images: [step0, step1, step2, step3, step4]
+        images: [step0, step1, step2, step3, step4],
+        oldAnimation: {}
     }
 
     constructor(props) {
@@ -33,7 +34,7 @@ class Game extends Component {
 
     handelGuess = (e) => {
         let letter = e.target.value;
-        if(letter === '?'){
+        if (letter === '?') {
             letter = " ";
         }
         this.setState(st => ({
@@ -47,7 +48,7 @@ class Game extends Component {
             <button
                 value={letter}
                 key={i}
-                className="btn btn-lg btn-primary m-1"
+                className="button-alpha"
                 onClick={this.handelGuess}
                 disabled={this.state.gussed.has(letter)}
             >{letter}</button>
@@ -56,6 +57,7 @@ class Game extends Component {
 
 
     resetButton = () => {
+        document.querySelector("body").style.animation = true;
         this.setState(
             {
                 mistake: 0,
@@ -76,33 +78,35 @@ class Game extends Component {
 
         if (gameOver) {
             gameStat = 0;
+
             document.querySelector("body").style.animation = false;
         }
 
         return (
             <>
                 <div className="Hangman container">
-                    <h1 className="text-center" style={{ textDecoration: "underline" }}>Guess The Word</h1>
+                    <h1 className="text-center card-header" style={{ textDecoration: "underline" }}>Guess The Phrase</h1>
                     <div className=""> <div className="score">Wrong Guesses:&nbsp;{this.state.mistake} of {this.props.maxWrong}</div></div>
-                    <div className="maingrid">
+                    <div className="maingrid ">
                         <div className="center">
-                            <div id="balloon ">
+                            <div className="balloon" id="balloon">
                                 <img src={this.props.images[this.state.mistake]} alt="Not Found" height="350" width="220" />
                             </div>
-                            <div style={{ fontSize: "30px", textAlign: "center", fontWeight: "500" }}>
+                            <div className="card-headder" style={{ fontSize: "30px", textAlign: "center", fontWeight: "500" }}>
                                 {!gameOver ? this.gussedWord() : this.state.answer}
                             </div>
                         </div>
 
                         <div className="text-center">
-                            <p style={{ fontWeight: "800", fontSize: "large" }}>Guess the programming language.</p>
-                                {gameStat === 1 ? <h1>You Won</h1> : gameStat === 0 ? <h1 className="text-center">You Lost</h1> :<div className="words" > {gameStat}</div>}
-                            
-                            <button
-                                className="btn btn-danger p-3 mt-4"
-                                onClick={this.resetButton}>
-                                &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
-                            </button>
+                            <p style={{ fontWeight: "800", fontSize: "large" }}>Guess the Phrase.</p>
+                            {gameStat === 1 ? <h1>You Won</h1> : gameStat === 0 ? <h1 className="text-center">You Lost</h1> : <div className="words" > {gameStat}</div>}
+                            {gameStat === 0 ?
+                                <button
+                                    className="btn btn-danger p-3 mt-4"
+                                    onClick={this.resetButton}>
+                                    &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
+                                </button> :<></>
+                            }
                         </div>
                     </div>
                 </div>
