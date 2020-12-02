@@ -7,7 +7,6 @@
 body {
   height: 100vh;
   width: 100vw;
-  
   background: url("./img/WebBg201.png") repeat 0 0;
   background-position: top bottom;
   background-size: contain , contain;

@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import './Game.css';
 import { randWord } from '../Words.js';
+import won from "../img/original.gif";
+import Rodal from 'rodal';
+import 'rodal/lib/rodal.css';
 
 import step0 from '../img/0.png';
 import step1 from '../img/1.png';
@@ -22,6 +25,7 @@ class Game extends Component {
             mistake: 0,
             gussed: new Set([]),
             answer: randWord(),
+            visible: true,
         }
     }
 
@@ -66,6 +70,13 @@ class Game extends Component {
             }
         );
     }
+    show() {
+        this.setState({ visible: true });
+    }
+
+    hide() {
+        this.setState({ visible: false });
+    }
 
     render() {
         const isWinner = this.gussedWord().join("") === this.state.answer;
@@ -81,9 +92,18 @@ class Game extends Component {
 
             document.querySelector("body").style.animation = false;
         }
-
         return (
             <>
+                {        gameStat === 1 ?
+                    <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} animation="rotate">
+                        <div>
+                            <div className="typewriter-text1 text-danger" style={{fontSize:"20px"}}>You Won the game of Hangman....!</div>
+                            <div>
+                                <img src={won} style={{ objectFit: "scale-down" }} height="80%" width="90%" alt="img not found" />
+                            </div>
+                        </div>
+                    </Rodal> : <></>
+                }
                 <div className="Hangman container">
                     <h1 className="text-center card-header" style={{ textDecoration: "underline" }}>Guess The Phrase</h1>
                     <div className=""> <div className="score">Wrong Guesses:&nbsp;{this.state.mistake} of {this.props.maxWrong}</div></div>
@@ -105,7 +125,7 @@ class Game extends Component {
                                     className="btn btn-danger p-3 mt-4"
                                     onClick={this.resetButton}>
                                     &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
-                                </button> :<></>
+                                </button> : <></>
                             }
                         </div>
                     </div>
