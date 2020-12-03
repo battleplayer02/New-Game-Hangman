@@ -115,8 +115,8 @@ class Game extends Component {
                 <div className="Hangman container">
                     <h2 className="text-center">Guess The Phrase</h2>
                     <div className="score">
-                        Score:{this.state.mistake}
-                        Total:{this.props.maxWrong} 
+                        <div style={{borderRadius:"25px",background:"white",float:"left",width:"100px"}}> Wrong:{this.state.mistake}</div>
+                        <div style={{borderRadius:"25px",background:"white",float:"right",width:"100px"}}>Total:{this.props.maxWrong} </div>
                     </div>
                     <div className="maingrid ">
                         <div className="center justify-content-center align-items-center">
