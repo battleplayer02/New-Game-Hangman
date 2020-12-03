@@ -1,31 +1,36 @@
 .balloon > img{
     
-        animation: moveBaloon 2s ease-in infinite;
         position: relative;
         margin-left: auto;
         margin-right: auto;
     
 }
 
-@keyframes moveBaloon {
-    25% {
-        top: -1vh;
-    }
-    50% {
-        top: -2vh;
-    }
-    75% {
-        top: -1vh;
-    }
-    100% {
-        top: 0vh;
-    }
+.balloon > img{
+  -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
 }
+
+.balloon > img{
+  
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+}
+
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
 
 
 .Hangman{
     width: 100%;
-    background: url("../img/SPOILER_WebBg202.png") ;
+    /* background: url("../img/SPOILER_WebBg202.png") ; */
 }
 
 .center{
@@ -165,4 +170,33 @@
 }
 .rodal-dialog{
     background-color: skyblue;
+}
+
+
+.cloud{ 
+  margin-top:70px;
+  width:350px;
+  height:120px;
+  background:#ECEFF1;
+  box-shadow: 10px 10px rgba(0,0,0,0.2);
+  border-radius:100px;
+}
+.cloud::after, .cloud::before{
+   content:"";
+   position:relative;
+   display:inline-block;
+   background:inherit;
+   border-radius:inherit;
+}
+.cloud::after{
+   width:100px;
+   height:100px;
+   top:-220px;
+   left:50px;
+}
+.cloud::before{
+   width:180px;
+   height:180px;
+   top: -70px;
+   left:130px;
 }

@@ -10,7 +10,7 @@ function App() {
     //if
     //main page '/'
     // /game game 
-    <>
+    <div className="bg top">
       <Router>
         <Switch>
 
@@ -24,8 +24,8 @@ function App() {
           <Route path="/">
             <div className="App">
               <div className="wel__text">
-                <div class="animated-title">
-                  <div class="text-top">
+                <div className="animated-title">
+                  <div className="text-top">
                     <div>
                       <span>Welcome  </span>
                       <span>To Hangman</span>
@@ -38,13 +38,13 @@ function App() {
               </div>
 
               <div className="balloon btn-square wobble-horizontal">
-                <img src={balloon} height="350" width="250" alt="img not found" />
+                <img src={balloon} className="img-fluid" height="500px" width="300px" alt="img not found" />
               </div>
             </div>
           </Route>
         </Switch>
       </Router>
-    </>
+    </div>
 
   );
 }

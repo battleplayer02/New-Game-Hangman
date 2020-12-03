@@ -14,6 +14,24 @@ import step4 from '../img/4.png';
 
 class Game extends Component {
 
+    styleScore1 = {
+        width: "100px",
+        borderRadius: "25px", 
+        padding: "3px", 
+        backgroundSize: "contain",
+        float:"right",
+        background:"white",
+    }
+    styleScore2 = {
+        width: "100px",
+        borderRadius: "25px", 
+        padding: "3px", 
+        backgroundSize: "contain",
+        background:"white",
+        float:"left",
+    }
+
+
     static defaultProps = {
         maxWrong: 4,
         images: [step0, step1, step2, step3, step4],
@@ -39,9 +57,7 @@ class Game extends Component {
 
     handelGuess = (e) => {
         let letter = e.target.value;
-        if (letter === '?') {
-            letter = " ";
-        }
+
         this.setState(st => ({
             gussed: st.gussed.add(letter),
             mistake: st.mistake + (st.answer.includes(letter) ? 0 : 1),
@@ -49,7 +65,7 @@ class Game extends Component {
     }
 
     generateButtons = () => {
-        return "abcdefghijklmnopqrstuvwxyz?".toUpperCase().split("").map((letter, i) =>
+        return "abcdefghijklmnopqrstuvwxyz ".toUpperCase().split("").map((letter, i) =>
             <button
                 value={letter}
                 key={i}
@@ -62,14 +78,7 @@ class Game extends Component {
 
 
     resetButton = () => {
-        document.querySelector("body").style.animation = true;
-        this.setState(
-            {
-                mistake: 0,
-                gussed: new Set([]),
-                answer: randWord(),
-            }
-        );
+        window.location.reload();
     }
     show() {
         this.setState({ visible: true });
@@ -80,6 +89,9 @@ class Game extends Component {
     }
 
     render() {
+        window.onbeforeunload = function () {
+            return "Aru you sure you want to reload."
+        }
         const isWinner = this.gussedWord().join("") === this.state.answer;
         let gameStat = this.generateButtons();
         const gameOver = this.state.mistake >= this.props.maxWrong;
@@ -95,38 +107,41 @@ class Game extends Component {
         }
         return (
             <>
-                {        gameStat === 1 ?
-                    <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} animation="rotate">
-                        <div>
-                            <div className="typewriter-text1" style={{ fontSize: "20px" }}>You Won the game of Hangman....!</div>
+                {
+                    gameStat === 1 ?
+                        <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} height="300" width="300" animation="rotate">
                             <div>
-                                <img src={won} style={{ objectFit: "scale-down" }} height="80%" width="90%" alt="img not found" />
+                                <div className="card-header" style={{ fontSize: "20px" }}>You Won....!</div>
+                                <div>
+                                    <img src={won} style={{ objectFit: "scale-down" }} height="80%" width="90%" alt="img not found" />
+                                </div>
                             </div>
-                        </div>
-                    </Rodal>
-                    :<></>
+                        </Rodal>
+                        : <></>
                 }
                 {
-                    
-                    gameStat===0?
-                    <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} animation="rotate">
-                        <div>
-                            <div className="typewriter-text1" style={{ fontSize: "20px" ,color:"red"}}>You Lost the game of Hangman....!</div>
+                    gameStat === 0 ?
+                        <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} height="300" width="300" animation="rotate">
                             <div>
-                                <img src={lost} style={{ objectFit: "scale-down" }} height="50%" width="65%" alt="img not found" />
+                                <div className="card-header" style={{ fontSize: "20px", color: "red" }}>You Lost...!</div>
+                                <div>
+                                    <img src={lost} style={{ objectFit: "scale-down" }} height="50%" width="65%" alt="img not found" />
+                                </div>
                             </div>
-                        </div>
-                    </Rodal>:<></>
+                        </Rodal> : <></>
                 }
                 <div className="Hangman container">
-                    <h1 className="text-center" style={{ textDecoration: "underline" }}>Guess The Phrase</h1>
-                    <div className=""> <div className="score">Wrong Guesses:&nbsp;{this.state.mistake} of {this.props.maxWrong}</div></div>
+                    <h2 className="text-center">Guess The Phrase</h2>
+                    <div className="score">
+                        <div style={this.styleScore2 }>Wrong : {this.state.mistake}</div>
+                        <div style={this.styleScore1 }>Total : {this.props.maxWrong}</div>
+                    </div>
                     <div className="maingrid ">
-                        <div className="center">
+                        <div className="center justify-content-center align-items-center">
                             <div className="balloon" id="balloon">
-                                <img src={this.props.images[this.state.mistake]} alt="Not Found" height="350" width="220" />
+                                <img src={this.props.images[this.state.mistake]} alt="Not Found" height="340" width="210" />
                             </div>
-                            <div className="card-headder" style={{ fontSize: "30px", textAlign: "center", fontWeight: "500" }}>
+                            <div className="card-headder card col-sm-8 col-lg-4" style={{ fontSize: "30px", textAlign: "center", fontWeight: "500", margin: "auto" }}>
                                 {!gameOver ? this.gussedWord() : this.state.answer}
                             </div>
                         </div>
