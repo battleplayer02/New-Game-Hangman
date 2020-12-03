@@ -114,9 +114,9 @@ class Game extends Component {
                 }
                 <div className="Hangman container">
                     <h2 className="text-center">Guess The Phrase</h2>
-                    <div className="score">
-                        <div style={{borderRadius:"25px",background:"white",float:"left",width:"100px"}}> Wrong:{this.state.mistake}</div>
-                        <div style={{borderRadius:"25px",background:"white",float:"right",width:"100px"}}>Total:{this.props.maxWrong} </div>
+                    <div className="score" style={{display:"flex"}}>
+                        <div style={{background:"white",borderRadius:"25px",width:"100px", marginRight:"auto"}}> Wrong:{this.state.mistake}</div>
+                        <div style={{background:"white",borderRadius:"25px",width:"100px", marginLeft:"auto"}}>Total:{this.props.maxWrong} </div>
                     </div>
                     <div className="maingrid ">
                         <div className="center justify-content-center align-items-center">
