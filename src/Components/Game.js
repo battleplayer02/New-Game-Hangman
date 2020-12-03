@@ -14,24 +14,6 @@ import step4 from '../img/4.png';
 
 class Game extends Component {
 
-    styleScore1 = {
-        width: "100px",
-        borderRadius: "25px", 
-        padding: "3px", 
-        backgroundSize: "contain",
-        float:"right",
-        background:"white",
-    }
-    styleScore2 = {
-        width: "100px",
-        borderRadius: "25px", 
-        padding: "3px", 
-        backgroundSize: "contain",
-        background:"white",
-        float:"left",
-    }
-
-
     static defaultProps = {
         maxWrong: 4,
         images: [step0, step1, step2, step3, step4],
@@ -57,7 +39,7 @@ class Game extends Component {
 
     handelGuess = (e) => {
         let letter = e.target.value;
-
+        
         this.setState(st => ({
             gussed: st.gussed.add(letter),
             mistake: st.mistake + (st.answer.includes(letter) ? 0 : 1),
@@ -89,7 +71,7 @@ class Game extends Component {
     }
 
     render() {
-        window.onbeforeunload = function () {
+        window.onbeforeunload = function(){
             return "Aru you sure you want to reload."
         }
         const isWinner = this.gussedWord().join("") === this.state.answer;
@@ -109,43 +91,43 @@ class Game extends Component {
             <>
                 {
                     gameStat === 1 ?
-                        <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} height="300" width="300" animation="rotate">
+                    <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} height="300" width="300" animation="rotate">
+                        <div>
+                            <div className="card-header" style={{ fontSize: "20px" }}>You Won....!</div>
                             <div>
-                                <div className="card-header" style={{ fontSize: "20px" }}>You Won....!</div>
-                                <div>
-                                    <img src={won} style={{ objectFit: "scale-down" }} height="80%" width="90%" alt="img not found" />
-                                </div>
+                                <img src={won} style={{ objectFit: "scale-down" }} height="80%" width="90%" alt="img not found" />
                             </div>
-                        </Rodal>
-                        : <></>
+                        </div>
+                    </Rodal>
+                    :<></>
                 }
-                {
-                    gameStat === 0 ?
-                        <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} height="300" width="300" animation="rotate">
+                {   
+                    gameStat===0?
+                    <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} height="300" width="300" animation="rotate">
+                        <div>
+                            <div className="card-header" style={{ fontSize: "20px" ,color:"red"}}>You Lost...!</div>
                             <div>
-                                <div className="card-header" style={{ fontSize: "20px", color: "red" }}>You Lost...!</div>
-                                <div>
-                                    <img src={lost} style={{ objectFit: "scale-down" }} height="50%" width="65%" alt="img not found" />
-                                </div>
+                                <img src={lost} style={{ objectFit: "scale-down" }} height="50%" width="65%" alt="img not found" />
                             </div>
-                        </Rodal> : <></>
+                        </div>
+                    </Rodal>:<></>
                 }
                 <div className="Hangman container">
                     <h2 className="text-center">Guess The Phrase</h2>
                     <div className="score">
-                        <div style={this.styleScore2 }>Wrong : {this.state.mistake}</div>
-                        <div style={this.styleScore1 }>Total : {this.props.maxWrong}</div>
+                        Score:{this.state.mistake}
+                        Total:{this.props.maxWrong} 
                     </div>
                     <div className="maingrid ">
                         <div className="center justify-content-center align-items-center">
                             <div className="balloon" id="balloon">
                                 <img src={this.props.images[this.state.mistake]} alt="Not Found" height="340" width="210" />
                             </div>
-                            <div className="card-headder card col-sm-8 col-lg-4" style={{ fontSize: "30px", textAlign: "center", fontWeight: "500", margin: "auto" }}>
+                            <div className="card-headder card col-sm-8 col-lg-4" style={{ fontSize: "30px", textAlign: "center", fontWeight: "500",margin:"auto" }}>
                                 {!gameOver ? this.gussedWord() : this.state.answer}
                             </div>
                         </div>
-
+                        
                         <div className="text-center" style={{ marginTop: "10px" }}>
                             {gameStat === 1 ? <h1>You Won</h1> : gameStat === 0 ? <h1 className="text-center">You Lost</h1> : <div className="words" > {gameStat}</div>}
                             {gameStat === 0 ?
