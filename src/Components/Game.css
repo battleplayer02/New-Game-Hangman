@@ -5,12 +5,26 @@
         margin-right: auto;
     
 }
+.wrong{
+  border: 2px solid red;
+  
+  border-radius:25px;
+  width:100px;
+  margin-right:auto
+}
+
+.correct{
+  border-radius:25px;
+  border: 2px solid green;
+  width:100px;
+  margin-left:auto
+}
 
 .questionBox {
-  height: 20vh;
+  
   width: 60%;
   font-size: 20px;
-  padding-top: auto;
+  padding-top: 15px;
   font-weight: 500;
   align-items: center;
   justify-content: center;
@@ -51,8 +65,7 @@
 
 .button-alpha{
   background: #ffffff;
-    height: 50px;
-    font-weight: 700;
+    /* font-weight: ; */
     border-radius: 100%;
     border: none;
     font-size: 25px;
@@ -70,7 +83,7 @@
     align-items: center;
     justify-content: center;
     grid-gap: 5px;
-    grid-template-columns: repeat(9,35px);
+    grid-template-columns: repeat(9,55px);
     grid-template-rows: repeat(3,55px);
 }
 
@@ -108,11 +121,12 @@
         justify-content: center;
         grid-gap: 5px;    
         grid-template-columns: repeat(9,35px);
-        grid-template-rows: repeat(3,55px);
+        grid-template-rows: repeat(3,35px);
         font-size: 27px;
     }
     .button-alpha{
         background-color: #ffffff;
+        font-weight: bold;
     }
   }
 
@@ -129,7 +143,7 @@
   top: 1vh;
   height: 8vh;
   width: 90%;
-  padding-top: 12px;
+  padding-top: 15px;
   margin: 0 auto 0 auto;
   align-items: center;
   justify-content: center;

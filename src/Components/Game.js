@@ -5,8 +5,8 @@ import won from "../img/original.gif";
 import lost from "../img/tenor.gif";
 import Rodal from 'rodal';
 import 'rodal/lib/rodal.css';
-import green from "../img/circle_green.png";
-import red from "../img/circle_red.png";
+// import green from "../img/circle_green.png";
+// import red from "../img/circle_red.png";
 
 import step0 from '../img/0.png';
 import step1 from '../img/1.png';
@@ -25,6 +25,7 @@ class Game extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            
             mistake: 0,
             gussed: new Set([]),
             answer: randWord(),
@@ -117,15 +118,15 @@ class Game extends Component {
                 <div className="Hangman container">
                     <h2 className="questionBox"><div>Guess The Phrase ? </div></h2>
                     <div className="score" style={{display:"flex"}}>
-                        <div style={{borderRadius:"25px",width:"100px", marginRight:"auto",backgroundImage:{green}}}> Wrong:{this.state.mistake}</div>
-                        <div style={{borderRadius:"25px",width:"100px", marginLeft:"auto",backgroundImage:{red}}}>Total:{this.props.maxWrong} </div>
+                        <div className="wrong"> Wrong:{this.state.mistake}</div>
+                        <div className="correct">Total:{this.props.maxWrong} </div>
                     </div>
                     <div className="maingrid ">
                         <div className="center justify-content-center align-items-center">
                             <div className="balloon" id="balloon">
                                 <img src={this.props.images[this.state.mistake]} alt="Not Found" height="320" width="190" />
                             </div>
-                            <div className="col-sm-8 col-lg-4" style={{background:"lightgrey",borderRadius:"15px", fontSize: "30px", textAlign: "center", fontWeight: "500",margin:"auto" }}>
+                            <div className="col-sm-8 col-lg-4" style={{background:"rgba(211, 211, 211, 0.2)",borderRadius:"15px", fontSize: "30px", textAlign: "center", fontWeight: "500",margin:"auto" }}>
                                 {!gameOver ? this.gussedWord() : this.state.answer}
                             </div>
                         </div>

@@ -18,7 +18,9 @@ function App() {
         </Route>
 
         <Route path="/">
-          <MainScreen />
+          <div className="cloud__class__1">
+            <MainScreen />
+          </div>
         </Route>
       </Switch>
     </Router>
