@@ -167,6 +167,13 @@
   cursor: pointer;
 }  
 }
+.app-bg{
+  background-image: url("./img/mobilebgland.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  height: 100vh;
+  width: 100vw;
+}
 
 .bg{
   background-image: url("./img/mobilebgland.png");
