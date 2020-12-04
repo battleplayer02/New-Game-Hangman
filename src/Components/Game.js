@@ -5,6 +5,8 @@ import won from "../img/original.gif";
 import lost from "../img/tenor.gif";
 import Rodal from 'rodal';
 import 'rodal/lib/rodal.css';
+import green from "../img/circle_green.png";
+import red from "../img/circle_red.png";
 
 import step0 from '../img/0.png';
 import step1 from '../img/1.png';
@@ -115,8 +117,8 @@ class Game extends Component {
                 <div className="Hangman container">
                     <h2 className="questionBox"><div>Guess The Phrase ? </div></h2>
                     <div className="score" style={{display:"flex"}}>
-                        <div style={{background:"white",borderRadius:"25px",width:"100px", marginRight:"auto"}}> Wrong:{this.state.mistake}</div>
-                        <div style={{background:"white",borderRadius:"25px",width:"100px", marginLeft:"auto"}}>Total:{this.props.maxWrong} </div>
+                        <div style={{borderRadius:"25px",width:"100px", marginRight:"auto",backgroundImage:{green}}}> Wrong:{this.state.mistake}</div>
+                        <div style={{borderRadius:"25px",width:"100px", marginLeft:"auto",backgroundImage:{red}}}>Total:{this.props.maxWrong} </div>
                     </div>
                     <div className="maingrid ">
                         <div className="center justify-content-center align-items-center">
