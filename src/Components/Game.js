@@ -25,7 +25,6 @@ class Game extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            
             mistake: 0,
             gussed: new Set([]),
             answer: randWord(),

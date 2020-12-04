@@ -1,10 +1,5 @@
 var programming_languages = [
-    "python",
-    "javascript",
-    "java",
-    "html",
     "Guess The phrase",
-    "fortran"
 ];
 
 export function randWord(){
