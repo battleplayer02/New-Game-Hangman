@@ -6,18 +6,21 @@ import Test from './Components/Test';
 
 function App() {
   return (
-    <div className="bg top">
+    
       <Router>
         <Switch>
 
           <Route path="/home">
+          <div className="bg top">
             <Game />
+          </div>
           </Route>
           <Route path="/test">
             <Test />
           </Route>
 
           <Route path="/">
+          <div className="top">
             <div className="App">
               <div className="wel__text">
                 <div className="animated-title">
@@ -36,10 +39,10 @@ function App() {
                 <div id="sp"><a href="home">Start</a></div>
               </div>
             </div>
+            </div>
           </Route>
         </Switch>
       </Router>
-    </div>
 
   );
 }
