@@ -6,10 +6,6 @@ import Test from './Components/Test';
 
 function App() {
   return (
-
-    //if
-    //main page '/'
-    // /game game 
     <div className="bg top">
       <Router>
         <Switch>
@@ -26,19 +22,18 @@ function App() {
               <div className="wel__text">
                 <div className="animated-title">
                   <div className="text-top">
-                    <div>
-                      <span>Welcome  </span>
-                      <span>To Hangman</span>
+                    <div className="text-center ml-3 mr-3" style={{ fontWeight: "600" }}>
+                      Welcome to hangman !<br />
+                      Click to begin !
                     </div>
                   </div>
                 </div>
               </div>
+              <div className="balloon btn-square">
+                <img src={balloon} className="img-fluid" height="490px" width="240px" alt="img not found" />
+              </div>
               <div id="buttonContainer">
                 <div id="sp"><a href="home">Start</a></div>
-              </div>
-
-              <div className="balloon btn-square wobble-horizontal">
-                <img src={balloon} className="img-fluid" height="500px" width="300px" alt="img not found" />
               </div>
             </div>
           </Route>

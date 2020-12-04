@@ -113,7 +113,7 @@ class Game extends Component {
                     </Rodal>:<></>
                 }
                 <div className="Hangman container">
-                    <h2 className="text-center">Guess The Phrase</h2>
+                    <h2 className="questionBox"><div>Guess The Phrase ? </div></h2>
                     <div className="score" style={{display:"flex"}}>
                         <div style={{background:"white",borderRadius:"25px",width:"100px", marginRight:"auto"}}> Wrong:{this.state.mistake}</div>
                         <div style={{background:"white",borderRadius:"25px",width:"100px", marginLeft:"auto"}}>Total:{this.props.maxWrong} </div>
@@ -121,9 +121,9 @@ class Game extends Component {
                     <div className="maingrid ">
                         <div className="center justify-content-center align-items-center">
                             <div className="balloon" id="balloon">
-                                <img src={this.props.images[this.state.mistake]} alt="Not Found" height="340" width="210" />
+                                <img src={this.props.images[this.state.mistake]} alt="Not Found" height="320" width="190" />
                             </div>
-                            <div className="card-headder card col-sm-8 col-lg-4" style={{ fontSize: "30px", textAlign: "center", fontWeight: "500",margin:"auto" }}>
+                            <div className="col-sm-8 col-lg-4" style={{background:"lightgrey",borderRadius:"15px", fontSize: "30px", textAlign: "center", fontWeight: "500",margin:"auto" }}>
                                 {!gameOver ? this.gussedWord() : this.state.answer}
                             </div>
                         </div>

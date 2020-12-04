@@ -6,6 +6,18 @@
     
 }
 
+.questionBox {
+  height: 20vh;
+  width: 60%;
+  font-size: 20px;
+  padding-top: auto;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  background-color: rgba(211, 211, 211, 0.2)
+}
+
 .balloon > img{
   -webkit-animation: mover 1s infinite  alternate;
     animation: mover 1s infinite  alternate;
@@ -30,7 +42,6 @@
 
 .Hangman{
     width: 100%;
-    /* background: url("../img/SPOILER_WebBg202.png") ; */
 }
 
 .center{
@@ -39,6 +50,7 @@
 }
 
 .button-alpha{
+  background: #ffffff;
     height: 50px;
     font-weight: 700;
     border-radius: 100%;
@@ -47,7 +59,7 @@
 }
 
 .button-alpha:hover{
-    background-color: rgba(128, 128, 128, 0.548);
+    background-color: rgba(128, 128, 128, 0.548)
 }
 
 
@@ -100,7 +112,7 @@
         font-size: 27px;
     }
     .button-alpha{
-        background-color: white;
+        background-color: #ffffff;
     }
   }
 
@@ -111,7 +123,19 @@
 .typewriter-text2 {
   animation-name: typewriter2;
 }
-
+.questionBox {
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  top: 1vh;
+  height: 8vh;
+  width: 90%;
+  padding-top: 12px;
+  margin: 0 auto 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: rgba(211, 211, 211, 0.3)
+}
 .typewriter-text1,
 .typewriter-text2 {
   overflow: hidden;
@@ -172,31 +196,10 @@
     background-color: skyblue;
 }
 
-
-.cloud{ 
-  margin-top:70px;
-  width:350px;
-  height:120px;
-  background:#ECEFF1;
-  box-shadow: 10px 10px rgba(0,0,0,0.2);
-  border-radius:100px;
+@keyframes slide {
+  from { background-position: 0 0; }
+  to { background-position: 0 600px; }
 }
-.cloud::after, .cloud::before{
-   content:"";
-   position:relative;
-   display:inline-block;
-   background:inherit;
-   border-radius:inherit;
-}
-.cloud::after{
-   width:100px;
-   height:100px;
-   top:-220px;
-   left:50px;
-}
-.cloud::before{
-   width:180px;
-   height:180px;
-   top: -70px;
-   left:130px;
+.scroll-bg{
+  animation: slide 20s linear infinite;
 }
