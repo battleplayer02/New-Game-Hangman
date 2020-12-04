@@ -171,8 +171,11 @@
   background-image: url("./img/mobilebgland.png");
   background-position: bottom;
   background-repeat: repeat-x;
+  background-size: auto 780px;
   height: 100vh;
+  margin-bottom: 0px;
   width: 100vw;
+  
 }
 
 .bg{
