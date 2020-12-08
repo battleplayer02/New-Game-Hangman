@@ -203,11 +203,38 @@
 
 .cloud__class{
   background: url("./img/mobilebgsky.png");
+  animation-fill-mode: forwards;
+  background-position: bottom;
+  animation: mymove 120s;
+}
+
+
+@keyframes mymove {
+  50% {
+      background-position: center;
+  }
+  100% {
+      background-position: top;
+  }
+}
+
+
+
+
+/* .cloud__class{
+  background: url("./img/mobilebgsky.png") repeat;
+  object-fit: contain;
+  animation-fill-mode: forwards;
+  background-position: bottom;
   animation: slide 8s linear infinite;
 }
 
 
-@keyframes slide {
-  from { background-position: 0 0; }
-  to { background-position: 0 600px; }
-}
+@keyframes slide{
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(0, -1692px, 0);
+  }
+} */

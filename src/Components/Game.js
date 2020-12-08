@@ -35,13 +35,23 @@ class Game extends Component {
 
     gussedWord = () => {
         return this.state.answer.split("").map(letter => (
-            this.state.gussed.has(letter) ? letter : " _ "
+            this.state.gussed.has(letter) ?
+                letter :
+                letter === " " ?
+                    "   " :
+                    " _ "
         ));
+    }
+
+    submitButton = () => {
+        this.setState(st => ({
+            gussed: st.gussed.add(" "),
+        }));
     }
 
     handelGuess = (e) => {
         let letter = e.target.value;
-        
+
         this.setState(st => ({
             gussed: st.gussed.add(letter),
             mistake: st.mistake + (st.answer.includes(letter) ? 0 : 1),
@@ -49,14 +59,15 @@ class Game extends Component {
     }
 
     generateButtons = () => {
-        return "abcdefghijklmnopqrstuvwxyz ".toUpperCase().split("").map((letter, i) =>
+        return "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((letter, i) =>
             <button
                 value={letter}
                 key={i}
                 className="button-alpha"
                 onClick={this.handelGuess}
-                disabled={this.state.gussed.has(letter)}
-            >{letter}</button>
+                disabled={this.state.gussed.has(letter)}>
+                {letter}
+            </button>
         );
     }
 
@@ -72,9 +83,15 @@ class Game extends Component {
         this.setState({ visible: false });
     }
 
+    componentDidMount() {
+
+    }
+
     render() {
-        window.onbeforeunload = function(){
-            return "Aru you sure you want to reload."
+
+
+        window.onbeforeunload = function () {
+            return "Are you sure you want to reload."
         }
         const isWinner = this.gussedWord().join("") === this.state.answer;
         let gameStat = this.generateButtons();
@@ -86,58 +103,76 @@ class Game extends Component {
 
         if (gameOver) {
             gameStat = 0;
-
-            document.querySelector("body").style.animation = false;
+            // document.querySelector("body").style.animation = false;
         }
         return (
             <>
                 {
                     gameStat === 1 ?
-                    <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} height="300" width="300" animation="rotate">
-                        <div>
-                            <div className="card-header" style={{ fontSize: "20px" }}>You Won....!</div>
+                        <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} height="300" width="300" animation="rotate">
                             <div>
-                                <img src={won} style={{ objectFit: "scale-down" }} height="80%" width="90%" alt="img not found" />
+                                <div className="card-header" style={{ fontSize: "20px" }}>You Won....!</div>
+                                <div>
+                                    <img src={won} style={{ objectFit: "scale-down" }} height="80%" width="90%" alt="img not found" />
+                                </div>
                             </div>
-                        </div>
-                    </Rodal>
-                    :<></>
+                        </Rodal>
+                        : <></>
                 }
-                {   
-                    gameStat===0?
-                    <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} height="300" width="300" animation="rotate">
-                        <div>
-                            <div className="card-header" style={{ fontSize: "20px" ,color:"red"}}>You Lost...!</div>
+                {
+                    gameStat === 0 ?
+                        <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} height="300" width="300" animation="rotate">
                             <div>
-                                <img src={lost} style={{ objectFit: "scale-down" }} height="50%" width="65%" alt="img not found" />
+                                <div className="card-header" style={{ fontSize: "20px", color: "red" }}>You Lost...!</div>
+                                <div>
+                                    <img src={lost} style={{ objectFit: "scale-down" }} height="50%" width="65%" alt="img not found" />
+                                </div>
                             </div>
-                        </div>
-                    </Rodal>:<></>
+                        </Rodal> : <></>
                 }
                 <div className="Hangman container">
                     <h2 className="questionBox"><div>Guess The Phrase ? </div></h2>
-                    <div className="score" style={{display:"flex"}}>
-                        <div className="wrong"> Wrong:{this.state.mistake}</div>
-                        <div className="correct">Total:{this.props.maxWrong} </div>
+                    <div className="score" style={{ display: "flex" }}>
+                        <div>Bandages Left : {4 - this.state.mistake}</div>
+                        {/* <div className="correct">Attempts:{this.props.maxWrong} </div> */}
                     </div>
                     <div className="maingrid ">
                         <div className="center justify-content-center align-items-center">
                             <div className="balloon" id="balloon">
                                 <img src={this.props.images[this.state.mistake]} alt="Not Found" height="320" width="190" />
                             </div>
-                            <div className="col-sm-8 col-lg-4" style={{background:"rgba(211, 211, 211, 0.2)",borderRadius:"15px", fontSize: "30px", textAlign: "center", fontWeight: "500",margin:"auto" }}>
-                                {!gameOver ? this.gussedWord() : this.state.answer}
+                            <div className="col-sm-8 col-lg-8" style={{ background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "30px", textAlign: "center", fontWeight: "500", margin: "auto" }}>
+                                {
+                                    !gameOver ?
+                                        this.gussedWord() :
+                                        this.state.answer
+                                }
                             </div>
                         </div>
-                        
+
                         <div className="text-center" style={{ marginTop: "10px" }}>
-                            {gameStat === 1 ? <h1>You Won</h1> : gameStat === 0 ? <h1 className="text-center">You Lost</h1> : <div className="words" > {gameStat}</div>}
-                            {gameStat === 0 ?
-                                <button
-                                    className="btn btn-danger p-3 mt-4"
-                                    onClick={this.resetButton}>
-                                    &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
-                                </button> : <></>
+                            {
+                                gameStat === 1 ?
+                                    <h1>You Won</h1> :
+                                    gameStat === 0 ?
+                                        <h1 className="text-center">You Lost</h1> :
+                                        <div className="words" >
+                                            {gameStat}
+                                        </div>
+                            }
+
+                            {
+                                gameStat === 0 ?
+                                    <button
+                                        className="submit-button"
+                                        onClick={this.resetButton}>
+                                        &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
+                                </button> :
+                                    
+                                    <button onClick={this.submitButton} className="submit-button">
+                                            Submit
+                                    </button>
+                                    
                             }
                         </div>
                     </div>

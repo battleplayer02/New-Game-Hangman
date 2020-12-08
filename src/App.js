@@ -5,10 +5,8 @@ import MainScreen from './Components/MainScreen';
 
 function App() {
   return (
-
     <Router>
       <Switch>
-
         <Route path="/home">
           <div className="cloud__class">
             <div className="bg top">
@@ -24,7 +22,6 @@ function App() {
         </Route>
       </Switch>
     </Router>
-
   );
 }
 
