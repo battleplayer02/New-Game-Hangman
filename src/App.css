@@ -201,7 +201,7 @@
   }
 }
 
-.cloud__class{
+/* .cloud__class{
   background: url("./img/mobilebgsky.png");
   animation-fill-mode: forwards;
   background-position: bottom;
@@ -216,12 +216,12 @@
   100% {
       background-position: top;
   }
-}
+} */
 
 
 
 
-/* .cloud__class{
+.cloud__class{
   background: url("./img/mobilebgsky.png") repeat;
   object-fit: contain;
   animation-fill-mode: forwards;
@@ -235,6 +235,6 @@
     transform: translate3d(0, 0, 0);
   }
   100%{
-    transform: translate3d(0, -1692px, 0);
+    transform: translate3d(0, -16925px, 0);
   }
-} */
+}
