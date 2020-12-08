@@ -6,11 +6,9 @@
 body {
   overflow: hidden;
   font-family: sans-serif;
-  height: 100vh;
-  width: 100vw;
   background: url("./img/mobilebgsky.png");
-    text-align: center;
-  background-size: contain;
+  text-align: center;
+  background-position: bottom;
 }
 
 code {
