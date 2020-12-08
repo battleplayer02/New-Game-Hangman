@@ -1,5 +1,5 @@
 import React from 'react'
-import "./MainScreen.css"
+// import "./MainScreen.css"
 import balloon from "../img/Balloon_0.png";
 
 export default function MainScreen() {
