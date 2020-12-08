@@ -205,7 +205,7 @@
   background: url("./img/mobilebgsky.png");
   animation-fill-mode: forwards;
   background-position: bottom;
-  animation: mymove 120s;
+  animation: mymove 10s;
 }
 
 
