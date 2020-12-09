@@ -201,40 +201,18 @@
   }
 }
 
-/* .cloud__class{
-  background: url("./img/mobilebgsky.png");
-  animation-fill-mode: forwards;
-  background-position: bottom;
-  animation: mymove 10s;
+ .cloud__class{
+  width: 100%;
+
+  background: url("./img/mobilebgsky.png") repeat 0 0;
+  -webkit-animation: slide 8s linear infinite;
+  box-sizing: border-box;
+
+
 }
 
 
-@keyframes mymove {
-  50% {
-      background-position: center;
-  }
-  100% {
-      background-position: top;
-  }
-} */
-
-
-
-
-.cloud__class{
-  background: url("./img/mobilebgsky.png") repeat;
-  object-fit: contain;
-  animation-fill-mode: forwards;
-  background-position: bottom;
-  animation: slide 8s linear infinite;
-}
-
-
-@keyframes slide{
-  0%{
-    transform: translate3d(0, 0, 0);
-  }
-  100%{
-    transform: translate3d(0, -16925px, 0);
-  }
+@-webkit-keyframes slide {
+  to { background-position: 0 0; }
+  from { background-position: 0 -400px; }
 }
