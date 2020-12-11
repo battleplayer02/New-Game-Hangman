@@ -38,8 +38,8 @@ class Game extends Component {
             this.state.gussed.has(letter) ?
                 letter :
                 letter === " " ?
-                    "   " :
-                    " _ "
+                    " " :
+                    "_"
         ));
     }
 
@@ -88,22 +88,39 @@ class Game extends Component {
     }
 
     render() {
-
-
         window.onbeforeunload = function () {
-            return "Are you sure you want to reload."
+            return "Are you sure you want to reload.";
         }
-        const isWinner = this.gussedWord().join("") === this.state.answer;
+
+        var g = "";
+        for (let key in this.gussedWord()) {
+            if (this.gussedWord()[key] === " ") {
+
+            } else {
+                g += this.gussedWord()[key];
+            }
+        }
+        var originalWord = this.state.answer.split(' ').join('');
+        console.log(g, originalWord);
+        // for (const k of this.gussed.values()) {
+        //     if(k ===" "){
+
+        //     }
+        //     else{
+        //         g+=k;
+        //     }
+        // }
+        // console.log(g);
+        const isWinner = g === originalWord;
+
+        // console.log(this.gussedWord().join("").replace(" ", ""), this.state.answer.replace(" ", ""));
         let gameStat = this.generateButtons();
         const gameOver = this.state.mistake >= this.props.maxWrong;
-
         if (isWinner) {
             gameStat = 1;
         }
-
         if (gameOver) {
             gameStat = 0;
-            // document.querySelector("body").style.animation = false;
         }
         return (
             <>
@@ -138,10 +155,10 @@ class Game extends Component {
                     </div>
                     <div className="maingrid ">
                         <div className="center justify-content-center align-items-center">
-                            <div className="balloon" id="balloon">
-                                <img src={this.props.images[this.state.mistake]} alt="Not Found" height="320" width="190" />
+                            <div className="balloon mt-5 mb-4" id="balloon">
+                                <img src={this.props.images[this.state.mistake]} alt="Not Found" height="310" width="192" />
                             </div>
-                            <div className="col-sm-8 col-lg-8" style={{ background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "30px", textAlign: "center", fontWeight: "500", margin: "auto" }}>
+                            <div className="col-sm-8 col-lg-8" style={{ letterSpacing: "3px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "30px", textAlign: "center", fontWeight: "500", margin: "auto" }}>
                                 {
                                     !gameOver ?
                                         this.gussedWord() :
@@ -168,11 +185,7 @@ class Game extends Component {
                                         onClick={this.resetButton}>
                                         &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
                                 </button> :
-                                    
-                                    <button onClick={this.submitButton} className="submit-button">
-                                            Submit
-                                    </button>
-                                    
+                                    null
                             }
                         </div>
                     </div>
