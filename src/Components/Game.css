@@ -240,3 +240,16 @@
     color: #fff;
 
 }
+.blur {
+  opacity: 0.1;
+}
+#canvas {
+  transition: all 0.5s ease;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ecf0f1;
+  z-index: 0;
+}

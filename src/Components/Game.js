@@ -150,8 +150,7 @@ class Game extends Component {
                 <div className="Hangman container">
                     <h2 className="questionBox"><div>Guess The Phrase ? </div></h2>
                     <div className="score" style={{ display: "flex" }}>
-                        <div>Bandages Left : {4 - this.state.mistake}</div>
-                        {/* <div className="correct">Attempts:{this.props.maxWrong} </div> */}
+                        <div>Bandages : {4 - this.state.mistake}</div>
                     </div>
                     <div className="maingrid ">
                         <div className="center justify-content-center align-items-center">
