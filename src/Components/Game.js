@@ -158,7 +158,7 @@ class Game extends Component {
                             <div className="balloon mt-5 mb-4" id="balloon">
                                 <img src={this.props.images[this.state.mistake]} alt="Not Found" height="310" width="192" />
                             </div>
-                            <div className="col-sm-8 col-lg-8" style={{ letterSpacing: "3px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "30px", textAlign: "center", fontWeight: "500", margin: "auto" }}>
+                            <div className="col-sm-12 col-lg-8" style={{ letterSpacing: "3px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "30px", textAlign: "center", fontWeight: "500", margin: "auto" }}>
                                 {
                                     !gameOver ?
                                         this.gussedWord() :
