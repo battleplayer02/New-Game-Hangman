@@ -13,7 +13,7 @@ import step4 from '../img/4.png';
 
 class Game extends Component {
 
-    phraseStyle1 = { letterSpacing: "8px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500", margin: "auto" }
+    phraseStyle1 = { letterSpacing: "4px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500", margin: "auto" }
     phraseStyle2 = { letterSpacing: "5px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500", margin: "auto" }
 
     static defaultProps = {
@@ -66,7 +66,7 @@ class Game extends Component {
                 className="button-alpha"
                 onClick={this.handelGuess}
                 disabled={this.state.gussed.has(letter)}
-                >
+            >
                 {letter}
             </button>
         );
@@ -105,26 +105,29 @@ class Game extends Component {
         }
         return (
             <>
-                {!isWinner ? <div className="Hangman container">
+                <div className="Hangman container">
                     <h2 className="questionBox"><div>Guess The Phrase ? </div></h2>
-                    <div className="score" style={{ display: "flex" }}>
+                    <div className="score">
                         <div>Bandages : {4 - this.state.mistake}</div>
                     </div>
-                    <div className="maingrid ">
-                        <div className="center justify-content-center align-items-center">
-                            <div className="balloon mt-5 mb-4" id="balloon">
-                                <img src={this.props.images[this.state.mistake]} alt="Not Found" height="310" width="192" />
-                            </div>
-                            <div className="col-sm-12 col-lg-8">
-                                {
-                                    !gameOver ?
-                                        <div style={this.phraseStyle1}>{this.gussedWord()}</div> :
-                                        <div style={this.phraseStyle2}>{this.state.answer}</div> 
-                                }
-                            </div>
+                    <div className="maingrid">
+                        
+                        {/* part1 baloon */}
+                        <div className="balloon mt-2 mb-2" id="balloon">
+                            <img src={this.props.images[this.state.mistake]} alt="Not Found" height="310" width="192" />
+                        </div>
+                        {/* part 2 phrase */}
+                        <div>
+                            {
+                                !gameOver ?
+                                    <div style={this.phraseStyle1}>{this.gussedWord()}</div> :
+                                    <div style={this.phraseStyle2}>{this.state.answer}</div>
+                            }
                         </div>
 
-                        <div className="text-center" style={{ marginTop: "10px" }}>
+                        {/* part 3 keypad */}
+
+                        <div style={{ marginTop: "10px" }}>
                             {
                                 gameStat === 1 ?
                                     <h1>You Won</h1> :
@@ -147,7 +150,7 @@ class Game extends Component {
                         </div>
                     </div>
                 </div>
-                    : null}
+
             </>
         )
     }
