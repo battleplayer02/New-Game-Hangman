@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import './Game.css';
 import { randWord } from '../Words.js';
-import won from "../img/original.gif";
-import lost from "../img/tenor.gif";
-import Rodal from 'rodal';
 import 'rodal/lib/rodal.css';
 // import green from "../img/circle_green.png";
 // import red from "../img/circle_red.png";
@@ -15,6 +12,9 @@ import step3 from '../img/3.png';
 import step4 from '../img/4.png';
 
 class Game extends Component {
+
+    phraseStyle1 = { letterSpacing: "8px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500", margin: "auto" }
+    phraseStyle2 = { letterSpacing: "5px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500", margin: "auto" }
 
     static defaultProps = {
         maxWrong: 4,
@@ -65,7 +65,8 @@ class Game extends Component {
                 key={i}
                 className="button-alpha"
                 onClick={this.handelGuess}
-                disabled={this.state.gussed.has(letter)}>
+                disabled={this.state.gussed.has(letter)}
+                >
                 {letter}
             </button>
         );
@@ -75,23 +76,12 @@ class Game extends Component {
     resetButton = () => {
         window.location.reload();
     }
-    show() {
-        this.setState({ visible: true });
-    }
-
-    hide() {
-        this.setState({ visible: false });
-    }
 
     componentDidMount() {
 
     }
 
     render() {
-        window.onbeforeunload = function () {
-            return "Are you sure you want to reload.";
-        }
-
         var g = "";
         for (let key in this.gussedWord()) {
             if (this.gussedWord()[key] === " ") {
@@ -102,18 +92,9 @@ class Game extends Component {
         }
         var originalWord = this.state.answer.split(' ').join('');
         console.log(g, originalWord);
-        // for (const k of this.gussed.values()) {
-        //     if(k ===" "){
 
-        //     }
-        //     else{
-        //         g+=k;
-        //     }
-        // }
-        // console.log(g);
         const isWinner = g === originalWord;
 
-        // console.log(this.gussedWord().join("").replace(" ", ""), this.state.answer.replace(" ", ""));
         let gameStat = this.generateButtons();
         const gameOver = this.state.mistake >= this.props.maxWrong;
         if (isWinner) {
@@ -124,30 +105,7 @@ class Game extends Component {
         }
         return (
             <>
-                {
-                    gameStat === 1 ?
-                        <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} height="300" width="300" animation="rotate">
-                            <div>
-                                <div className="card-header" style={{ fontSize: "20px" }}>You Won....!</div>
-                                <div>
-                                    <img src={won} style={{ objectFit: "scale-down" }} height="80%" width="90%" alt="img not found" />
-                                </div>
-                            </div>
-                        </Rodal>
-                        : <></>
-                }
-                {
-                    gameStat === 0 ?
-                        <Rodal visible={this.state.visible} onClose={this.hide.bind(this)} height="300" width="300" animation="rotate">
-                            <div>
-                                <div className="card-header" style={{ fontSize: "20px", color: "red" }}>You Lost...!</div>
-                                <div>
-                                    <img src={lost} style={{ objectFit: "scale-down" }} height="50%" width="65%" alt="img not found" />
-                                </div>
-                            </div>
-                        </Rodal> : <></>
-                }
-                <div className="Hangman container">
+                {!isWinner ? <div className="Hangman container">
                     <h2 className="questionBox"><div>Guess The Phrase ? </div></h2>
                     <div className="score" style={{ display: "flex" }}>
                         <div>Bandages : {4 - this.state.mistake}</div>
@@ -157,11 +115,11 @@ class Game extends Component {
                             <div className="balloon mt-5 mb-4" id="balloon">
                                 <img src={this.props.images[this.state.mistake]} alt="Not Found" height="310" width="192" />
                             </div>
-                            <div className="col-sm-12 col-lg-8" style={{ letterSpacing: "3px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "30px", textAlign: "center", fontWeight: "500", margin: "auto" }}>
+                            <div className="col-sm-12 col-lg-8">
                                 {
                                     !gameOver ?
-                                        this.gussedWord() :
-                                        this.state.answer
+                                        <div style={this.phraseStyle1}>{this.gussedWord()}</div> :
+                                        <div style={this.phraseStyle2}>{this.state.answer}</div> 
                                 }
                             </div>
                         </div>
@@ -183,12 +141,13 @@ class Game extends Component {
                                         className="submit-button"
                                         onClick={this.resetButton}>
                                         &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
-                                </button> :
+                                    </button> :
                                     null
                             }
                         </div>
                     </div>
                 </div>
+                    : null}
             </>
         )
     }
