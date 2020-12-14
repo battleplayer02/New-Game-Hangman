@@ -1,7 +1,37 @@
 var programming_languages = [
-    "Guess The phrase",
+    { phrase: "Early bird gets the worm", hint: "First come first served" },
+    { phrase: "Read between the lines", hint: "Know someone" },
+    { phrase: "I can eat a horse", hint: "Very hungry" },
+    { phrase: "Twenty Four seven", hint: "Always available" },
+    { phrase: "Cat got your tounge", hint: "Unusually Quite" },
+    { phrase: "One in one million", hint: "Special" },
+    { phrase: "I beg to differ", hint: "Politely Disagree" },
+    { phrase: "Easier said than done", hint: "Not easy to do" },
+    { phrase: "Add insult to injury", hint: "Act in a way that makes a bad situation worse" },
+    { phrase: "Do not cry over spilled milk", hint: "There is no use in being upset" },
+    // { phrase: "Curiosity killed the cat", },
+    // { phrase: "Two peas in a pod", },
+    // { phrase: "That's the last straw", },
+    // { phrase: "Piece of cake", },
+    // { phrase: "Speak of the devil", },
+    // { phrase: "Go the whole nine yards", },
+    // { phrase: "An eye for an eye", },
+    // { phrase: "Hit the hay", },
+    // { phrase: "Stab someone in the back", },
+    // { phrase: "Quit cold turkey", },
+    // { phrase: "Cut to the chase", },
+    // { phrase: "Best of both worlds", },
+    // { phrase: "Kill two birds with one stone", },
+    // { phrase: "Break a leg", },
+    // { phrase: "Hit the nail on the head", },
+    // { phrase: "Kick the bucket", },
+    // { phrase: "Frankly, my dear, I don't give a damn", },
+    // { phrase: "May the Force be with you", },
+    // { phrase: "Titanic", },
+    // { phrase: "After all this time? Always." },
+    // { phrase: "Guess The phrase", hint: "Guess The phrase", },
 ];
 
-export function randWord(){
-    return programming_languages[Math.floor(Math.random() * programming_languages.length)].toUpperCase()
+export function randWord() {
+    return programming_languages[Math.floor(Math.random() * programming_languages.length)]
 }

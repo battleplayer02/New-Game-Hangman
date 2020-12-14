@@ -2,14 +2,12 @@ import React, { Component } from 'react'
 import './Game.css';
 import { randWord } from '../Words.js';
 import 'rodal/lib/rodal.css';
-// import green from "../img/circle_green.png";
-// import red from "../img/circle_red.png";
-
 import step0 from '../img/0.png';
 import step1 from '../img/1.png';
 import step2 from '../img/2.png';
 import step3 from '../img/3.png';
 import step4 from '../img/4.png';
+import HintButton from './HintButton';
 
 class Game extends Component {
 
@@ -19,15 +17,16 @@ class Game extends Component {
     static defaultProps = {
         maxWrong: 4,
         images: [step0, step1, step2, step3, step4],
-        oldAnimation: {}
     }
 
     constructor(props) {
         super(props);
+        var rp = randWord();
         this.state = {
             mistake: 0,
             gussed: new Set([]),
-            answer: randWord(),
+            answer: rp.phrase.toUpperCase(),
+            hint: rp.hint,
             visible: true,
         }
     }
@@ -111,7 +110,7 @@ class Game extends Component {
                         <div>Bandages : {4 - this.state.mistake}</div>
                     </div>
                     <div className="maingrid">
-                        
+
                         {/* part1 baloon */}
                         <div className="balloon mt-2 mb-2" id="balloon">
                             <img src={this.props.images[this.state.mistake]} alt="Not Found" height="310" width="192" />
@@ -139,6 +138,14 @@ class Game extends Component {
                             }
 
                             {
+                                gameStat === 1 ?
+                                    null:
+                                    gameStat === 0 ?
+                                        null :
+                                        <HintButton hint={this.state.hint}/>
+                            }
+
+                            {
                                 gameStat === 0 ?
                                     <button
                                         className="submit-button"
@@ -157,3 +164,4 @@ class Game extends Component {
 }
 
 export default Game;
+//zinda hai ky

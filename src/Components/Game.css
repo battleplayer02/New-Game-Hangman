@@ -1,3 +1,18 @@
+.hint-class{
+  display: inline-block;
+  border-radius: 4px;
+  width: 405px;
+  font-size: large;
+  border: 1px solid black;
+  padding: 15px 5px;
+  font-weight: 600;
+  margin: 10px;
+  transition: all 100ms;
+}
+
+.hint-class:hover{
+  font-size: x-large;
+}
 
 .balloon > img{
     
@@ -113,6 +128,15 @@
 
 
 @media only screen and (max-width: 600px) {
+  .hint-class{
+    display: inline-block;
+    border-radius: 4px;
+    width: 345px;
+    border: 1px solid black;
+    padding: 0px 5px;
+    margin: 10px;
+  }
+
     .words{
         text-align: center;
         display: grid;
