@@ -12,7 +12,7 @@ import HintButton from './HintButton';
 class Game extends Component {
 
     phraseStyle1 = { letterSpacing: "4px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500" }
-    phraseStyle2 = { background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500"}
+    phraseStyle2 = { background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500" }
 
     static defaultProps = {
         maxWrong: 4,
@@ -37,7 +37,7 @@ class Game extends Component {
             this.state.gussed.has(letter) ?
                 letter :
                 letter === " " ?
-                    " " :
+                    " " :
                     "_"
         ));
     }
@@ -120,7 +120,8 @@ class Game extends Component {
                             {
                                 !gameOver ?
                                     <span style={this.phraseStyle1}>{this.gussedWord()}</span> :
-                                    <p style={this.phraseStyle2}>{this.state.answer}</p>
+                                    null
+                                // <p >{this.state.answer}</p>
                             }
                         </div>
 
