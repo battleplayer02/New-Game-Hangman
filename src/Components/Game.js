@@ -12,7 +12,7 @@ import HintButton from './HintButton';
 class Game extends Component {
 
     phraseStyle1 = { letterSpacing: "4px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500", margin: "auto" }
-    phraseStyle2 = { letterSpacing: "5px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500", margin: "auto" }
+    phraseStyle2 = { letterSpacing: "4px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500", margin: "auto" }
 
     static defaultProps = {
         maxWrong: 4,
@@ -116,7 +116,7 @@ class Game extends Component {
                             <img src={this.props.images[this.state.mistake]} alt="Not Found" height="310" width="192" />
                         </div>
                         {/* part 2 phrase */}
-                        <div className="col-sm-12">
+                        <div className="col-sm-12" style={{fontFamily:"monospaced"}}>
                             {
                                 !gameOver ?
                                     <div style={this.phraseStyle1}>{this.gussedWord()}</div> :
