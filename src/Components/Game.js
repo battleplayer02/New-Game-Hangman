@@ -116,7 +116,7 @@ class Game extends Component {
                             <img src={this.props.images[this.state.mistake]} alt="Not Found" height="310" width="192" />
                         </div>
                         {/* part 2 phrase */}
-                        <div>
+                        <div className="col-sm-12">
                             {
                                 !gameOver ?
                                     <div style={this.phraseStyle1}>{this.gussedWord()}</div> :
