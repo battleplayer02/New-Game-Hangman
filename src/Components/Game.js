@@ -83,7 +83,7 @@ class Game extends Component {
     render() {
         var g = "";
         for (let key in this.gussedWord()) {
-            if (this.gussedWord()[key] === " ") {
+            if (this.gussedWord()[key] === " ") {
 
             } else {
                 g += this.gussedWord()[key];
@@ -132,7 +132,7 @@ class Game extends Component {
                                 gameStat === 1 ?
                                     <h1>You Won</h1> :
                                     gameStat === 0 ?
-                                        <h1 className="text-center">You Lost</h1> :
+                                        <h1>You Lost</h1> :
                                         <div className="words" >
                                             {gameStat}
                                         </div>
