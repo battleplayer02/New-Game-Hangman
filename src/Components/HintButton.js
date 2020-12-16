@@ -17,7 +17,7 @@ export default class HintButton extends React.Component {
     return (
       <div  style={{float:"left"}}>
         {
-          this.state.toggle ? <span className="hint-class">{this.props.hint}</span>:null
+          this.state.toggle ? <span className="hint-class">ajfosvofiudgf uiapd gaudyfpg89aydf8 g-98a r988gya er9g a098fgap9rgt0</span>:null
         }
         <button className="submit-button1" onClick={this.handelClick}>?</button>
       </div>

@@ -11,8 +11,8 @@ import HintButton from './HintButton';
 
 class Game extends Component {
 
-    phraseStyle1 = { letterSpacing: "4px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500", margin: "auto" }
-    phraseStyle2 = { background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500", margin: "auto" }
+    phraseStyle1 = { letterSpacing: "4px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500" }
+    phraseStyle2 = { background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500"}
 
     static defaultProps = {
         maxWrong: 4,
@@ -119,7 +119,7 @@ class Game extends Component {
                         <div>
                             {
                                 !gameOver ?
-                                    <p style={this.phraseStyle1}>{this.gussedWord()}</p> :
+                                    <span style={this.phraseStyle1}>{this.gussedWord()}</p> :
                                     <p style={this.phraseStyle2}>{this.state.answer}</p>
                             }
                         </div>
