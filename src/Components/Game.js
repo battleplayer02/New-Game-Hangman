@@ -119,7 +119,7 @@ class Game extends Component {
                         <div>
                             {
                                 !gameOver ?
-                                    <span style={this.phraseStyle1}>{this.gussedWord()}</p> :
+                                    <span style={this.phraseStyle1}>{this.gussedWord()}</span> :
                                     <p style={this.phraseStyle2}>{this.state.answer}</p>
                             }
                         </div>
