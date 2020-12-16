@@ -1,12 +1,33 @@
+.submit-button1{
+  background: black;
+  border: black solid;
+  margin-top: 15px;
+  padding: 3px;
+  color: white;
+  font-weight:700;
+  width: 40px;
+  height: 40px;
+  transition: all .35s;
+
+  border-radius: 99px;
+}
+
+.submit-button1:hover{
+    background: white;
+    color: black;
+
+}
+
+
 .hint-class{
   display: inline-block;
   border-radius: 4px;
   width: 405px;
   font-size: large;
   border: 1px solid black;
-  padding: 15px 5px;
+  /* padding: 15px 5px; */
   font-weight: 600;
-  margin: 10px;
+  margin-top: 15px;
   transition: all 100ms;
 }
 
@@ -120,6 +141,10 @@
 }
 
 .maingrid{
+  justify-content: center;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: 405px;
   /* border: red solid; */
 }
 
@@ -133,10 +158,17 @@
     border-radius: 4px;
     width: 345px;
     border: 1px solid black;
-    padding: 0px 5px;
-    margin: 10px;
+    /* padding: 0px 5px; */
+    /* margin: 10px; */
   }
 
+  .maingrid{
+    justify-content: center;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 345px;
+    /* border: red solid; */
+  }
     .words{
         text-align: center;
         display: grid;
@@ -154,13 +186,7 @@
     }
   }
 
-  .typewriter-text1 {
-  animation-name: typewriter1;
-}
 
-.typewriter-text2 {
-  animation-name: typewriter2;
-}
 .questionBox {
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
@@ -197,6 +223,7 @@
 .scroll-bg{
   animation: slide 20s linear infinite;
 }
+
 .submit-button{
   background: #ffffff;
   border: black solid;
