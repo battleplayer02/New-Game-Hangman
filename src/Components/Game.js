@@ -11,7 +11,7 @@ import HintButton from './HintButton';
 
 class Game extends Component {
 
-    phraseStyle1 = { letterSpacing: "4px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500" }
+    phraseStyle1 = { letterSpacing: "4px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "5px", fontSize: "25px", textAlign: "center", fontWeight: "500" }
     phraseStyle2 = { background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500" }
 
     static defaultProps = {
@@ -148,11 +148,11 @@ class Game extends Component {
 
                             {
                                 gameStat === 0 ?
-                                    <button
-                                        className="submit-button"
-                                        onClick={this.resetButton}>
+                                    <a href="/"><button
+                                        className="submit-button">
                                         &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
-                                    </button> :
+                                    </button>
+                                    </a> :
                                     null
                             }
                         </div>
