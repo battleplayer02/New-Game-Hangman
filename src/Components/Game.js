@@ -119,8 +119,8 @@ class Game extends Component {
                         <div style={{ fontFamily: "monospaced", width: "100%" }}>
                             {
                                 !gameOver ?
-                                    <div style={this.phraseStyle1}>{this.gussedWord()}</div> :
-                                    <div style={this.phraseStyle2}>{this.state.answer}</div>
+                                    <p style={this.phraseStyle1}>{this.gussedWord()}</p> :
+                                    <p style={this.phraseStyle2}>{this.state.answer}</p>
                             }
                         </div>
 
