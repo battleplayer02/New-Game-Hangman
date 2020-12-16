@@ -127,7 +127,7 @@ class Game extends Component {
 
                         {/* part 3 keypad */}
 
-                        <div style={{ marginTop: "10px" }}>
+                        <div style={{ marginTop: "20px" }}>
                             {
                                 gameStat === 1 ?
                                     <h1>You Won</h1> :
