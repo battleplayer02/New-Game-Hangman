@@ -1,0 +1,258 @@
+.submit-button1{
+  background: black;
+  border: black solid;
+  margin-top: 15px;
+  padding: 3px;
+  color: white;
+  font-weight:700;
+  width: 40px;
+  height: 40px;
+  transition: all .35s;
+
+  border-radius: 99px;
+}
+
+.submit-button1:hover{
+    background: white;
+    color: black;
+
+}
+
+
+.hint-class{
+  display: inline-block;
+  border-radius: 4px;
+  width: 405px;
+  font-size: large;
+  border: 1px solid black;
+  /* padding: 15px 5px; */
+  font-weight: 600;
+  margin-top: 15px;
+  transition: all 100ms;
+}
+
+.hint-class:hover{
+  font-size: x-large;
+}
+
+.balloon > img{
+    
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    
+}
+.wrong{
+  border: 2px solid red;
+  
+  border-radius:25px;
+  width:100px;
+  margin-right:auto
+}
+
+.correct{
+  border-radius:25px;
+  border: 2px solid green;
+  width:100px;
+  margin-left:auto
+}
+
+.questionBox {
+  
+  width: 60%;
+  font-size: 20px;
+  padding-top: 15px;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  background-color: rgba(211, 211, 211, 0.2)
+}
+
+.balloon > img{
+  -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+
+
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+
+
+.Hangman{
+    width: 100%;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+.button-alpha{
+  font-weight: 700;
+  background: white;
+  height: 37px;
+  width: 40px;
+  align-items: center;
+    border-radius: 99px;
+    border: none;
+    font-size: 25px;
+    transition: 100ms all ease;
+}
+
+.button-alpha:hover{
+    height: 45px;
+    width: 40px;
+    color: white;
+    font-size: xx-large;
+    background-color: black;
+    z-index: 5;
+    /* background-color: rgba(128, 128, 128, 0.548) */
+}
+
+
+
+.words{
+    text-align: center;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    /* grid-gap: 5px; */
+    grid-template-columns: repeat(9,45px);
+    grid-template-rows: repeat(3,45px);
+}
+
+.score{
+    background-color: transparent;
+    color: #000000;
+    font-weight: bolder;
+    text-align: center;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: larger;
+
+}
+
+.maingrid{
+  justify-content: center;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: 405px;
+  /* border: red solid; */
+}
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .hint-class{
+    display: inline-block;
+    border-radius: 4px;
+    width: 345px;
+    border: 1px solid black;
+    /* padding: 0px 5px; */
+    /* margin: 10px; */
+  }
+
+  .maingrid{
+    justify-content: center;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 345px;
+    /* border: red solid; */
+  }
+    .words{
+        text-align: center;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-gap: 5px;    
+        grid-template-columns: repeat(9,35px);
+        grid-template-rows: repeat(3,35px);
+        font-size: 27px;
+    }
+    .button-alpha{
+      
+        background-color: #ffffff;
+        font-weight: 600;
+    }
+  }
+
+
+.questionBox {
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  top: 1vh;
+  height: 8vh;
+  width: 90%;
+  padding-top: 15px;
+  margin: 0 auto 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: rgba(211, 211, 211, 0.3)
+}
+
+
+
+@keyframes caret {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.rodal-dialog{
+    background-color: skyblue;
+}
+
+@keyframes slide {
+  from { background-position: 0 0; }
+  to { background-position: 0 600px; }
+}
+.scroll-bg{
+  animation: slide 20s linear infinite;
+}
+
+.submit-button{
+  background: #ffffff;
+  border: black solid;
+  margin-top: 15px;
+  padding: 3px;
+  color: black;
+  font-weight:700;
+  width: 150px;
+  height: 40px;
+  transition: all .35s;
+
+  border-radius: 99px;
+}
+
+.submit-button:hover{
+    background: black;
+    color: #fff;
+
+}
+.blur {
+  opacity: 0.1;
+}
+#canvas {
+  transition: all 0.5s ease;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ecf0f1;
+  z-index: 0;
+}

@@ -21,7 +21,7 @@ export default function MainScreen() {
                         <img src={balloon} className="img-fluid" height="490px" width="240px" alt="img not found" />
                     </div>
                     <div id="buttonContainer">
-                        <div id="sp"><a href="home">Start</a></div>
+                        <div id="sp"><a href="level5">Start</a></div>
                     </div>
                 </div>
             </div>

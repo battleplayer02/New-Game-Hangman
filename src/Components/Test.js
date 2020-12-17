@@ -1,29 +1,25 @@
-import React from 'react';
-import 'rodal/lib/rodal.css';
-export default class Test extends React.Component {
+import React from 'react'
+import useWindowSize from 'react-use/lib/useWindowSize'
+import Confetti from 'react-confetti'
 
-  constructor() {
-    super();
-    this.state = {
-      toggle: false,
-    }
-  }
+export default () => {
+  const { width, height } = useWindowSize()
 
-  handelClick = (event) => {
-    alert("a")
-    this.setState({ toggle: true })
-    
-  }
-  render() {
-    return (
-      <>
-        {
-          this.state.toggle ? this.props.hint : null
+
+  return (
+
+    <>
+      {setTimeout(
+        function () {
+          <Confetti
+            width={width}
+            height={height}
+          />
         }
+          .bind(this),
+        3000
+      )}
 
-        <button className="hint-btn" onClick={this.handelClick}>Hint</button>
-
-      </>
-    );
-  }
+    </>
+  )
 }

@@ -1,22 +1,23 @@
 import React, { Component } from 'react'
-import './Game.css';
-import { randWord } from '../Words.js';
-import 'rodal/lib/rodal.css';
-import step0 from '../img/0.png';
-import step1 from '../img/1.png';
-import step2 from '../img/2.png';
-import step3 from '../img/3.png';
-import step4 from '../img/4.png';
-import HintButton from './HintButton';
+import './Level5.css';
+import { randWord } from '../../Words.js';
+// import 'rodal/lib/rodal.css';
+import step0 from '../../img/level5/0.png';
+import step1 from '../../img/level5/1.png';
+import step2 from '../../img/level5/2.png';
+import step3 from '../../img/level5/3.png';
+import step4 from '../../img/level5/4.png';
+import step5 from '../../img/level5/5.png';
+import HintButton from '../HintButton';
 
-class Game extends Component {
+class Level5 extends Component {
 
     phraseStyle1 = { letterSpacing: "4px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "5px", fontSize: "25px", textAlign: "center", fontWeight: "500" }
     phraseStyle2 = { background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500" }
 
     static defaultProps = {
-        maxWrong: 4,
-        images: [step0, step1, step2, step3, step4],
+        maxWrong: 5,
+        images: [step0, step1, step2, step3, step4,step5],
     }
 
     constructor(props) {
@@ -107,7 +108,7 @@ class Game extends Component {
                 <div className="Hangman container">
                     <h2 className="questionBox"><div>Guess The Phrase ? </div></h2>
                     <div className="score">
-                        <div>Bandages : {4 - this.state.mistake}</div>
+                        <div>Bandages : {5 - this.state.mistake}</div>
                     </div>
                     <div className="maingrid">
 
@@ -164,5 +165,4 @@ class Game extends Component {
     }
 }
 
-export default Game;
-//zinda hai ky
+export default Level5;
