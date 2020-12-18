@@ -3,12 +3,6 @@
   padding: 0;
 }
 
-body {
-  font-family: sans-serif;
-  /* background: url("./img/mobilebgsky.png"); */
-  text-align: center;
-  background-position: bottom;
-}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
