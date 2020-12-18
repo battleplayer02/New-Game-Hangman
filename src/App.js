@@ -6,6 +6,8 @@ import Level3 from './Components/Level3/Level3';
 import MainScreen from './Components/MainScreen/MainScreen';
 import Test from './Components/Test'
 import Stage1 from './Components/Stage1/Stage1';
+import Stage2 from './Components/Stage1/Stage1';
+import Stage3 from './Components/Stage1/Stage1';
 function App() {
   return (
     <Router>
@@ -45,7 +47,7 @@ function App() {
         <Route path="/stage2">
           <div className="cloud__class">
             <div className="bg top">
-              <Stage1 />
+              <Stage2 />
             </div>
           </div>
         </Route>
