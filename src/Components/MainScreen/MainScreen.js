@@ -8,20 +8,15 @@ export default function MainScreen() {
             <div className="app-bg top">
                 <div className="App">
                     <div className="wel__text">
-                        <div className="animated-title">
-                            <div className="text-top">
-                                <div className="text-center ml-3 mr-3" style={{ fontWeight: "600" }}>
-                                    Welcome to hangman !<br />
-                      Click to begin !
-                    </div>
-                            </div>
+                        <div className="text-cente" style={{ fontWeight: "600" }}>
+                            <br />Welcome to hangman !<br />Click to begin !<br />
                         </div>
                     </div>
                     <div className="balloon btn-square">
                         <img src={balloon} className="img-fluid mt-3" height="470px" width="230px" alt="img not found" />
                     </div>
                     <div id="buttonContainer">
-                        <div id="sp"><a href="level5">Start</a></div>
+                        <div id="sp"><a href="stage1">Start</a></div>
                     </div>
                 </div>
             </div>

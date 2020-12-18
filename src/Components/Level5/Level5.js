@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import './Level5.css';
 import Confetti from 'react-confetti'
 import { randWord } from './Words.js';
-// import 'rodal/lib/rodal.css';
 import step0 from './img/0.png';
 import step1 from './img/1.png';
 import step2 from './img/2.png';
@@ -10,6 +9,7 @@ import step3 from './img/3.png';
 import step4 from './img/4.png';
 import step5 from './img/5.png';
 import HintButton from '../HintButton';
+import Timer from '../Timer/Timer'
 
 class Level5 extends Component {
 
@@ -141,7 +141,8 @@ class Level5 extends Component {
                         <div style={{ marginTop: "20px" }}>
                             {
                                 gameStat === 1 ?
-                                    <h1>You Won</h1> :
+                                    <h1>You Passed Stage 1 <br/><Timer seconds={5} redirect={"stage2"} /> </h1>
+                                    :
                                     gameStat === 0 ?
                                         <h1>You Lost</h1> :
                                         <div className="words" >

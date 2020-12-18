@@ -6,8 +6,8 @@ import Level3 from './Components/Level3/Level3';
 import MainScreen from './Components/MainScreen/MainScreen';
 import Test from './Components/Test'
 import Stage1 from './Components/Stage1/Stage1';
-import Stage2 from './Components/Stage1/Stage1';
-import Stage3 from './Components/Stage1/Stage1';
+import Stage2 from './Components/Stage2/Stage2';
+import Stage3 from './Components/Stage3/Stage3';
 function App() {
   return (
     <Router>
@@ -15,7 +15,7 @@ function App() {
 
         {/* for testing the components */}
         <Route path="/test">
-          <Test hint={"guess the ghrase"}/>
+          <Test hint={"guess the ghrase"} />
         </Route>
 
         {/* stage1 */}
@@ -28,11 +28,7 @@ function App() {
         </Route>
         {/* stage1 homepage */}
         <Route path="/stage1">
-          <div className="cloud__class">
-            <div className="bg top">
-              <Stage1 />
-            </div>
-          </div>
+          <Stage1 />
         </Route>
 
         {/* stage2 */}
@@ -45,11 +41,7 @@ function App() {
         </Route>
         {/* stage1 homepage */}
         <Route path="/stage2">
-          <div className="cloud__class">
-            <div className="bg top">
-              <Stage2 />
-            </div>
-          </div>
+          <Stage2 />
         </Route>
 
         {/* stage3 */}
@@ -62,11 +54,7 @@ function App() {
         </Route>
         {/* stage3 homepage */}
         <Route path="/stage3">
-          <div className="cloud__class">
-            <div className="bg top">
-              <Stage3 />
-            </div>
-          </div>
+          <Stage3 />
         </Route>
 
         {/* default */}

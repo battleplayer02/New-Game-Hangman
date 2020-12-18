@@ -8,6 +8,7 @@ import step3 from './img/3.png';
 import step4 from './img/4.png';
 import HintButton from '../HintButton';
 import Confetti from 'react-confetti'
+import Timer from '../Timer/Timer'
 
 class Level4 extends Component {
 
@@ -140,8 +141,8 @@ class Level4 extends Component {
                         <div style={{ marginTop: "20px" }}>
                             {
                                 gameStat === 1 ?
-                                    <h1>You Won</h1>
-                                    :
+                                <h1>You Passed Stage 2....!!!! <br/><Timer seconds={5} redirect={"stage3"} /> </h1>
+                                :
                                     gameStat === 0 ?
                                         <h1>You Lost</h1> :
                                         <div className="words" >
