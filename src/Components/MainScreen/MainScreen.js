@@ -1,6 +1,6 @@
 import React from 'react'
-// import "./MainScreen.css"
-import balloon from "../img/Balloon_0.png";
+import "./MainScreen.css"
+import balloon from "../../img/Balloon_0.png";
 
 export default function MainScreen() {
     return (
@@ -18,7 +18,7 @@ export default function MainScreen() {
                         </div>
                     </div>
                     <div className="balloon btn-square">
-                        <img src={balloon} className="img-fluid" height="490px" width="240px" alt="img not found" />
+                        <img src={balloon} className="img-fluid mt-3" height="470px" width="230px" alt="img not found" />
                     </div>
                     <div id="buttonContainer">
                         <div id="sp"><a href="level5">Start</a></div>

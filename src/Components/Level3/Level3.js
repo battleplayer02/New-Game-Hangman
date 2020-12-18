@@ -1,22 +1,21 @@
 import React, { Component } from 'react'
-import './Level4.css';
 import { randWord } from './Words.js';
 import step0 from './img/0.png';
 import step1 from './img/1.png';
 import step2 from './img/2.png';
 import step3 from './img/3.png';
-import step4 from './img/4.png';
 import HintButton from '../HintButton';
 import Confetti from 'react-confetti'
+import './Level3.css';
 
-class Level4 extends Component {
+class Level3 extends Component {
 
     phraseStyle1 = { letterSpacing: "4px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "5px", fontSize: "25px", textAlign: "center", fontWeight: "500" }
     phraseStyle2 = { background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500" }
 
     static defaultProps = {
-        maxWrong: 4,
-        images: [step0, step1, step2, step3, step4],
+        maxWrong: 3,
+        images: [step0, step1, step2, step3],
     }
 
     constructor(props) {
@@ -117,7 +116,7 @@ class Level4 extends Component {
                 <div className="Hangman container">
                     <h2 className="questionBox"><div>Guess The Phrase ? </div></h2>
                     <div className="score">
-                        <div>Bandages : {4 - this.state.mistake}</div>
+                        <div>Bandages : {3 - this.state.mistake}</div>
                     </div>
                     <div className="maingrid">
 
@@ -175,5 +174,5 @@ class Level4 extends Component {
     }
 }
 
-export default Level4;
+export default Level3;
 //zinda hai ky

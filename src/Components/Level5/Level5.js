@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import './Level5.css';
-import { randWord } from '../../Words.js';
+import Confetti from 'react-confetti'
+import { randWord } from './Words.js';
 // import 'rodal/lib/rodal.css';
-import step0 from '../../img/level5/0.png';
-import step1 from '../../img/level5/1.png';
-import step2 from '../../img/level5/2.png';
-import step3 from '../../img/level5/3.png';
-import step4 from '../../img/level5/4.png';
-import step5 from '../../img/level5/5.png';
+import step0 from './img/0.png';
+import step1 from './img/1.png';
+import step2 from './img/2.png';
+import step3 from './img/3.png';
+import step4 from './img/4.png';
+import step5 from './img/5.png';
 import HintButton from '../HintButton';
 
 class Level5 extends Component {
@@ -17,7 +18,7 @@ class Level5 extends Component {
 
     static defaultProps = {
         maxWrong: 5,
-        images: [step0, step1, step2, step3, step4,step5],
+        images: [step0, step1, step2, step3, step4, step5],
     }
 
     constructor(props) {
@@ -80,8 +81,10 @@ class Level5 extends Component {
     componentDidMount() {
 
     }
-
     render() {
+
+        var width = window.innerWidth
+        var height = window.innerHeight
         var g = "";
         for (let key in this.gussedWord()) {
             if (this.gussedWord()[key] === " ") {
@@ -105,6 +108,13 @@ class Level5 extends Component {
         }
         return (
             <>
+                {
+                    gameStat === 1 ?
+                        < Confetti
+                            width={width}
+                            height={height}
+                        /> : null
+                }
                 <div className="Hangman container">
                     <h2 className="questionBox"><div>Guess The Phrase ? </div></h2>
                     <div className="score">

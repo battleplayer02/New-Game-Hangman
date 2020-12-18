@@ -5,21 +5,10 @@ import Confetti from 'react-confetti'
 export default () => {
   const { width, height } = useWindowSize()
 
-
   return (
-
-    <>
-      {setTimeout(
-        function () {
-          <Confetti
-            width={width}
-            height={height}
-          />
-        }
-          .bind(this),
-        3000
-      )}
-
-    </>
+    <Confetti
+      width={width}
+      height={height}
+    />
   )
 }
