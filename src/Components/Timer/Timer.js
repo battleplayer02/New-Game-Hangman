@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 
 class Timer extends Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class Timer extends Component {
         if (this.state.seconds > 0) {
             this.setState({ seconds: this.state.seconds - 1 })
         } else {
-            window.location.replace(this.props.redirect);
+            this.setState({seconds:<Redirect to={this.props.redirect} />})
         }
     }
     render() {
