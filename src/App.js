@@ -3,11 +3,13 @@ import { Switch, Route } from "react-router-dom";
 import Level4 from './Components/Level4/Level4';
 import Level5 from './Components/Level5/Level5';
 import Level3 from './Components/Level3/Level3';
-import MainScreen from './Components/MainScreen/MainScreen';
-import Test from './Components/Test'
 import Stage1 from './Components/Stage1/Stage1';
 import Stage2 from './Components/Stage2/Stage2';
 import Stage3 from './Components/Stage3/Stage3';
+import MainScreen from './Components/MainScreen/MainScreen';
+import Test from './Components/Test'
+import PageNotFound from './Components/PageNotFound/PageNotFound';
+
 function App() {
   return (
     <Switch>
@@ -56,10 +58,14 @@ function App() {
       </Route>
 
       {/* default */}
-      <Route path="/">
+      <Route path="/" exact={true}>
         <div className="cloud__class__1">
           <MainScreen />
         </div>
+      </Route>
+
+      <Route path="*">
+        <PageNotFound />
       </Route>
     </Switch>
   );

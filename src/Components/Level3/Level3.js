@@ -7,6 +7,7 @@ import step3 from './img/3.png';
 import HintButton from '../HintButton';
 import Confetti from 'react-confetti'
 import './Level3.css';
+import { Link } from 'react-router-dom';
 
 class Level3 extends Component {
 
@@ -116,7 +117,7 @@ class Level3 extends Component {
                 <div className="Hangman container">
                     <h2 className="questionBox"><div>Guess The Phrase ? </div></h2>
                     <div className="score">
-                        <div>Bandages : {3 - this.state.mistake}</div>
+                        <div style={{ fontSize: "20px" }}>Bandages : {3 - this.state.mistake}</div>
                     </div>
                     <div className="maingrid">
 
@@ -156,13 +157,14 @@ class Level3 extends Component {
                                         <HintButton hint={this.state.hint} />
                             }
 
+
                             {
                                 gameStat === 0 ?
-                                    <a href="/"><button
+                                    <Link to="/"><button
                                         className="submit-button">
                                         &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
                                     </button>
-                                    </a> :
+                                    </Link> :
                                     null
                             }
                         </div>

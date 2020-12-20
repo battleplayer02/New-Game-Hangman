@@ -9,6 +9,7 @@ import step4 from './img/4.png';
 import HintButton from '../HintButton';
 import Confetti from 'react-confetti'
 import Timer from '../Timer/Timer'
+import { Link } from 'react-router-dom';
 
 class Level4 extends Component {
 
@@ -118,7 +119,7 @@ class Level4 extends Component {
                 <div className="Hangman container">
                     <h2 className="questionBox"><div>Guess The Phrase ? </div></h2>
                     <div className="score">
-                        <div>Bandages : {4 - this.state.mistake}</div>
+                        <div style={{ fontSize: "20px" }}>Bandages : {4 - this.state.mistake}</div>
                     </div>
                     <div className="maingrid">
 
@@ -141,8 +142,8 @@ class Level4 extends Component {
                         <div style={{ marginTop: "20px" }}>
                             {
                                 gameStat === 1 ?
-                                <h1>You Passed Stage 2....!!!! <br/><Timer seconds={5} redirect={"stage3"} /> </h1>
-                                :
+                                    <h1>You Passed Stage 2....!!!! <br /><Timer seconds={5} redirect={"stage3"} /> </h1>
+                                    :
                                     gameStat === 0 ?
                                         <h1>You Lost</h1> :
                                         <div className="words" >
@@ -158,13 +159,14 @@ class Level4 extends Component {
                                         <HintButton hint={this.state.hint} />
                             }
 
+
                             {
                                 gameStat === 0 ?
-                                    <a href="/"><button
+                                    <Link to="/"><button
                                         className="submit-button">
                                         &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
                                     </button>
-                                    </a> :
+                                    </Link> :
                                     null
                             }
                         </div>

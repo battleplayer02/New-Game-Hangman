@@ -10,6 +10,7 @@ import step4 from './img/4.png';
 import step5 from './img/5.png';
 import HintButton from '../HintButton';
 import Timer from '../Timer/Timer'
+import { Link } from 'react-router-dom';
 
 class Level5 extends Component {
 
@@ -116,9 +117,9 @@ class Level5 extends Component {
                         /> : null
                 }
                 <div className="Hangman container">
-                    <h2 className="questionBox"><div>Guess The Phrase ? </div></h2>
+                    <h2 className="questionBox"><div style={{textSize:"15px"}}>Guess The Phrase ? </div></h2>
                     <div className="score">
-                        <div>Bandages : {5 - this.state.mistake}</div>
+                        <div style={{fontSize:"20px"}}>Bandages : {5 - this.state.mistake}</div>
                     </div>
                     <div className="maingrid">
 
@@ -160,11 +161,11 @@ class Level5 extends Component {
 
                             {
                                 gameStat === 0 ?
-                                    <a href="/"><button
+                                    <Link to="/"><button
                                         className="submit-button">
                                         &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
                                     </button>
-                                    </a> :
+                                    </Link> :
                                     null
                             }
                         </div>
