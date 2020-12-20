@@ -109,28 +109,7 @@
     color: #666;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
-.balloon {
-  display: flex;
-  /* background-color: red; */
-  justify-content: center;
-  align-items: center;
-}
 
-.typewriter {
-  font-family: sans-serif;
-  color: black;
-  padding-left: 30px;
-  display: block;
-  font-weight: 600;
-}
-.typewriter-text {
-  padding-right: 10px;
-  color: red;
-  border-right: solid red 7px;
-  text-transform: uppercase;
-  animation: cursor 1s ease-in-out infinite;
-  font-weight: bold;
-}
 @keyframes cursor {
   from { border-color: red; }
   to { border-color: transparent; }
