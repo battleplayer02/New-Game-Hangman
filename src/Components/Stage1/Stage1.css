@@ -1,0 +1,11 @@
+#mains {
+    width: 100%;
+    height: 100vh;
+    /* border: 20px solid rgb(83, 83, 197); */
+    display: flex;
+    background-image: url('../../img/mobilebgsky.png');
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+  }
+

@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import Timer from '../Timer/Timer'
+import './Stage1.css'
 class Stage1 extends Component {
 
     render() {
-        return <div style={{ width: "100%", textAlign: "center" }}>
-            <h1>
-                Welcome to Stage 1...!!!!! <br />Here you will get 5 chances.
-                <Timer redirect={'level5'} seconds={5} />
-            </h1>
+        return <div id="main">
+            <div>
+                <h3 style={{width:"100%"}}>
+                    Welcome to Stage 1...!!! <br />Here you will get 5 chances.
+                    <div style={{justifyContent:"center",display:"flex"}}><Timer redirect={'level5'} seconds={5} /></div>
+                </h3>
+            </div>
         </div>
     }
 }

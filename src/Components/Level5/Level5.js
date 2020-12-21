@@ -108,7 +108,7 @@ class Level5 extends Component {
             gameStat = 0;
         }
         return (
-            <>
+            <div className="bg">
                 {
                     gameStat === 1 ?
                         < Confetti
@@ -142,7 +142,7 @@ class Level5 extends Component {
                         <div style={{ marginTop: "20px" }}>
                             {
                                 gameStat === 1 ?
-                                    <h1>You Passed Stage 1 <br/><Timer seconds={5} redirect={"stage2"} /> </h1>
+                                    <h1>You Passed Stage 1 <br/><div style={{justifyContent:"center",display:"flex"}}><Timer redirect={'stage2'} seconds={5} /></div> </h1>
                                     :
                                     gameStat === 0 ?
                                         <h1>You Lost</h1> :
@@ -172,7 +172,7 @@ class Level5 extends Component {
                     </div>
                 </div>
 
-            </>
+            </div>
         )
     }
 }

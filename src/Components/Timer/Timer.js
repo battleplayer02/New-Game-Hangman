@@ -14,13 +14,13 @@ class Timer extends Component {
 
     tick() {
         if (this.state.seconds > 0) {
-            this.setState({ seconds: this.state.seconds - 1 })
+            this.setState({ seconds: this.state.seconds -1 })
         } else {
             this.setState({seconds:<Redirect to={this.props.redirect} />})
         }
     }
     render() {
-        return <div style={{ width: "100%", textAlign: "center" }}>
+        return <div style={{fontSize:"40px",border:"solid black",width:"50px",height:"50px",borderRadius:"100%",background:"white",marginTop:"20px"}}>
             {this.state.seconds}
         </div>
     }

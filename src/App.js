@@ -7,16 +7,11 @@ import Stage1 from './Components/Stage1/Stage1';
 import Stage2 from './Components/Stage2/Stage2';
 import Stage3 from './Components/Stage3/Stage3';
 import MainScreen from './Components/MainScreen/MainScreen';
-import Test from './Components/Test'
 import PageNotFound from './Components/PageNotFound/PageNotFound';
 
 function App() {
   return (
     <Switch>
-      {/* for testing the components */}
-      <Route path="/test">
-        <Test hint={"guess the ghrase"} />
-      </Route>
 
       {/* stage1 */}
       <Route path="/level5">
