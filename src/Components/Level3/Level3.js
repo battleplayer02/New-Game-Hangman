@@ -28,6 +28,7 @@ class Level3 extends Component {
             answer: rp.phrase.toUpperCase(),
             hint: rp.hint,
             visible: true,
+            ques:rp.ques
         }
     }
 
@@ -115,7 +116,7 @@ class Level3 extends Component {
                         /> : null
                 }
                 <div className="Hangman container">
-                    <h2 className="questionBox"><div>Guess The Phrase ? </div></h2>
+                    <h2 className="questionBox"><div>{this.state.ques}</div></h2>
                     <div className="score">
                         <div style={{ fontSize: "20px" }}>Bandages : {3 - this.state.mistake}</div>
                     </div>

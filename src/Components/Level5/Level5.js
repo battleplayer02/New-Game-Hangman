@@ -31,6 +31,7 @@ class Level5 extends Component {
             answer: rp.phrase.toUpperCase(),
             hint: rp.hint,
             visible: true,
+            ques: rp.ques
         }
     }
 
@@ -117,9 +118,9 @@ class Level5 extends Component {
                         /> : null
                 }
                 <div className="Hangman container">
-                    <h2 className="questionBox"><div style={{textSize:"15px"}}>Guess The Phrase ? </div></h2>
+                    <h2 className="questionBox"><div style={{ textSize: "15px" }}>{this.state.ques}</div></h2>
                     <div className="score">
-                        <div style={{fontSize:"20px"}}>Bandages : {5 - this.state.mistake}</div>
+                        <div style={{ fontSize: "20px" }}>Bandages : {5 - this.state.mistake}</div>
                     </div>
                     <div className="maingrid">
 
@@ -142,7 +143,7 @@ class Level5 extends Component {
                         <div style={{ marginTop: "20px" }}>
                             {
                                 gameStat === 1 ?
-                                    <h1>You Passed Stage 1 <br/><div style={{justifyContent:"center",display:"flex"}}><Timer redirect={'stage2'} seconds={5} /></div> </h1>
+                                    <h1>You Passed Stage 1 <br /><div style={{ justifyContent: "center", display: "flex" }}><Timer redirect={'stage2'} seconds={5} /></div> </h1>
                                     :
                                     gameStat === 0 ?
                                         <h1>You Lost</h1> :
