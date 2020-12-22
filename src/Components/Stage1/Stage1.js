@@ -5,12 +5,13 @@ class Stage1 extends Component {
 
     render() {
         return <div id="main">
+
             <div>
-                <h3 style={{width:"100%"}}>
-                    Welcome to Stage 1...!!! <br />You will get 5 chances.
-                    <div style={{justifyContent:"center",display:"flex"}}><Timer redirect={'level5'} seconds={5} /></div>
-                </h3>
+                <div style={{ fontSize: "35px" }}>Welcome to Stage 1...!!! <br />You will get 5 chances.</div>
+                <div>
+                    <Timer redirect={'level5'} seconds={5} /></div>
             </div>
+
         </div>
     }
 }
