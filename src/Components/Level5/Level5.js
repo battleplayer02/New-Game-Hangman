@@ -107,6 +107,7 @@ class Level5 extends Component {
             gameStat = 1;
         }
         if (gameOver) {
+            document.querySelector(".cloud__class").style.animationDirection = "reverse";
             gameStat = 0;
         }
         return (

@@ -1,3 +1,29 @@
+
+.bg{
+  background-image: url("../../img/mobilebgland.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: auto 780px;
+  height: 100vh;
+  margin-bottom: 0px;
+  width: 100vw;
+  animation: slide 10s infinite;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+
+ .cloud__class{
+  width: 100%;
+  background: url("../../img/mobilebgsky.png") repeat 0 0;
+  animation: slide 8s linear infinite;
+  box-sizing: border-box;
+}
+@keyframes slide {
+  from { background-position: 0 600px; }
+  to { background-position: 0 0; }
+}
+
 .submit-button1{
   background: black;
   border: black solid;
@@ -216,10 +242,7 @@
     background-color: skyblue;
 }
 
-@keyframes slide {
-  from { background-position: 0 0; }
-  to { background-position: 0 600px; }
-}
+
 .scroll-bg{
   animation: slide 20s linear infinite;
 }
