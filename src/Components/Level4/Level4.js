@@ -8,7 +8,7 @@ import step3 from './img/3.png';
 import step4 from './img/4.png';
 import HintButton from '../HintButton';
 import Confetti from 'react-confetti'
-import Timer from '../Timer/Timer'
+import Arrow from "../Arrow/Arrow";
 import { Link } from 'react-router-dom';
 
 class Level4 extends Component {
@@ -143,7 +143,8 @@ class Level4 extends Component {
                         <div style={{ marginTop: "20px" }}>
                             {
                                 gameStat === 1 ?
-                                    <h1>You Passed Stage 2....!!! <br /><div style={{ justifyContent: "center", display: "flex" }}><Timer redirect={'stage3'} seconds={5} /></div> </h1>
+                                <Arrow stage={"Stage2"} redirect={"stage2"} />
+
                                     :
                                     gameStat === 0 ?
                                         <h1>You Lost</h1> :
