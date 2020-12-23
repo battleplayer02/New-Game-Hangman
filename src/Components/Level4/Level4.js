@@ -29,6 +29,7 @@ class Level4 extends Component {
             gussed: new Set([]),
             answer: rp.phrase.toUpperCase(),
             hint: rp.hint,
+            ques: rp.ques,
             visible: true,
         }
     }
@@ -117,7 +118,7 @@ class Level4 extends Component {
                         /> : null
                 }
                 <div className="Hangman container">
-                    <h2 className="questionBox"><div>Guess The Phrase ? </div></h2>
+                    <h2 className="questionBox"><div>{this.state.ques}</div></h2>
                     <div className="score">
                         <div style={{ fontSize: "20px" }}>Bandages : {4 - this.state.mistake}</div>
                     </div>
@@ -142,7 +143,7 @@ class Level4 extends Component {
                         <div style={{ marginTop: "20px" }}>
                             {
                                 gameStat === 1 ?
-                                    <h1>You Passed Stage 2....!!! <br /><div style={{justifyContent:"center",display:"flex"}}><Timer redirect={'stage3'} seconds={5} /></div> </h1>
+                                    <h1>You Passed Stage 2....!!! <br /><div style={{ justifyContent: "center", display: "flex" }}><Timer redirect={'stage3'} seconds={5} /></div> </h1>
                                     :
                                     gameStat === 0 ?
                                         <h1>You Lost</h1> :
