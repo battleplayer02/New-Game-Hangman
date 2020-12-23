@@ -7,7 +7,7 @@ class Stage1 extends Component {
         return <div id="main">
             <div>
                 <h3 style={{width:"100%"}}>
-                    Stage 1...!!! <br />You will get 5 chances.
+                    Stage 1...!!! <br />Chances: 5.
                     <div style={{justifyContent:"center",display:"flex"}}><Timer redirect={'level5'} seconds={5} /></div>
                 </h3>
             </div>
