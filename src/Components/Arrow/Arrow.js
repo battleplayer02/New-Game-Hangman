@@ -7,15 +7,16 @@ function Arrow(props) {
         setRedirect(<Redirect to={props.redirect}></Redirect>)
     }
     return <>
-        <div>
-            {redirect}
 
-            <div class="flip">
-                <button onClick={() => handleClick()} style={{background: "transparent",border:"none"}}>
-                    <div class="front" >{props.stage}</div>
-                    <div class="back">START</div>
-                </button>
-            </div>
+        {redirect}
+
+        <div id="container">
+            <button class="learn-more" onClick={()=>handleClick()}>
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">{props.stage}</span>
+            </button>
         </div>
 
     </>
