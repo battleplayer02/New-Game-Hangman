@@ -8,8 +8,9 @@ import step2 from './img/2.png';
 import step3 from './img/3.png';
 import step4 from './img/4.png';
 import step5 from './img/5.png';
+import  Arrow  from "../Arrow/Arrow";
 import HintButton from '../HintButton';
-import Timer from '../Timer/Timer'
+
 import { Link } from 'react-router-dom';
 
 class Level5 extends Component {
@@ -143,7 +144,9 @@ class Level5 extends Component {
                         <div style={{ marginTop: "20px" }}>
                             {
                                 gameStat === 1 ?
-                                    <h1>You Passed Stage 1 <br /><div style={{ justifyContent: "center", display: "flex" }}><Timer redirect={'stage2'} seconds={5} /></div> </h1>
+                                    <Arrow stage={"Stage2"} redirect={"stage2"}>
+
+                                    </Arrow>
                                     :
                                     gameStat === 0 ?
                                         <h1>You Lost</h1> :
