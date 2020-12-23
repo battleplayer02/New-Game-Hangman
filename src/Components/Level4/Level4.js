@@ -145,7 +145,7 @@ class Level4 extends Component {
                         <div style={{ marginTop: "20px" }}>
                             {
                                 gameStat === 1 ?
-                                <Arrow stage={"Stage2"} redirect={"stage2"} />
+                                <Arrow stage={"Stage3"} redirect={"stage3"} />
 
                                     :
                                     gameStat === 0 ?
