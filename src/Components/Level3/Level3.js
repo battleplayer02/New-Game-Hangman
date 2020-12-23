@@ -28,7 +28,7 @@ class Level3 extends Component {
             answer: rp.phrase.toUpperCase(),
             hint: rp.hint,
             visible: true,
-            ques:rp.ques
+            ques: rp.ques
         }
     }
 
