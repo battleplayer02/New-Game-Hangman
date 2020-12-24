@@ -7,7 +7,7 @@ class Stage1 extends Component {
         return <div id="main">
 
             <div>
-                <div style={{ fontSize: "35px" }}>Stage 1...!!! <br />Bandages: 5.</div>
+                <div style={{ fontSize: "35px" }}>Stage 1 <br />Bandages: 5</div>
                 <div>
                     <Timer redirect={'level5'} seconds={5} /></div>
             </div>

@@ -102,7 +102,10 @@ class Level3 extends Component {
         }
         if (gameOver) {
             document.querySelector(".cloud__class").style.animationDirection = "reverse";
-
+            document.querySelector(".cloud__class").style.animationDuration = "500ms";
+            var element = document.getElementById("balloon");
+            element.classList.remove("balloon");
+            element.classList.add("test");
             gameStat = 0;
         }
 

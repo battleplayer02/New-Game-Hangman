@@ -8,7 +8,7 @@ class Stage3 extends Component {
             <div>
                 <h3>
                     Stage 3 <br />Bandages: 3
-                    <div style={{justifyContent:"center",display:"flex"}}><Timer redirect={'level3'} seconds={5} /></div>
+                    <div style={{ justifyContent: "center", display: "flex" }}><Timer redirect={'level3'} seconds={5} /></div>
                 </h3>
             </div>
         </div>
