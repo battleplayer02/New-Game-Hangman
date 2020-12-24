@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
 import './Level4.css';
+import Confetti from 'react-confetti'
 import { randWord } from './Words.js';
 import step0 from './img/0.png';
 import step1 from './img/1.png';
 import step2 from './img/2.png';
 import step3 from './img/3.png';
 import step4 from './img/4.png';
-import HintButton from '../HintButton';
-import Confetti from 'react-confetti'
 import Arrow from "../Arrow/Arrow";
+import HintButton from '../HintButton';
+
 import { Link } from 'react-router-dom';
+import Balloon from '../Balloon/Balloon';
 
 class Level4 extends Component {
 
@@ -29,8 +31,8 @@ class Level4 extends Component {
             gussed: new Set([]),
             answer: rp.phrase.toUpperCase(),
             hint: rp.hint,
-            ques: rp.ques,
             visible: true,
+            ques: rp.ques
         }
     }
 
@@ -82,8 +84,10 @@ class Level4 extends Component {
     componentDidMount() {
 
     }
-
     render() {
+
+        var width = window.innerWidth
+        var height = window.innerHeight
         var g = "";
         for (let key in this.gussedWord()) {
             if (this.gussedWord()[key] === " ") {
@@ -103,87 +107,77 @@ class Level4 extends Component {
             gameStat = 1;
         }
         if (gameOver) {
-            document.querySelector(".cloud__class").style.animationDirection = "reverse";
-            document.querySelector(".cloud__class").style.animationDuration = "500ms";
-            var element = document.getElementById("balloon");
-            element.classList.remove("balloon");
-            element.classList.add("test");
+            document.querySelector(".cloud_class_level_4").style.animationDirection = "reverse";
+            document.querySelector(".cloud_class_level_4").style.animationDuration = "600ms";
             gameStat = 0;
         }
-
-        var width = window.innerWidth
-        var height = window.innerHeight
         return (
-            <>
-                {
-                    gameStat === 1 ?
-                        < Confetti
-                            width={width}
-                            height={height}
-                        /> : null
-                }
-                <div className="Hangman container">
-                    <h2 className="questionBox"><div>{this.state.ques}</div></h2>
-                    <div className="score">
-                        <div style={{ fontSize: "20px" }}>Bandages : {4 - this.state.mistake}</div>
-                    </div>
-                    <div className="maingrid">
-
-                        {/* part1 baloon */}
-                        <div className="balloon mt-2 mb-2" id="balloon">
-                            <img src={this.props.images[this.state.mistake]} alt="Not Found" height="310" width="192" />
+            <div className="cloud_class_level_4">
+                <div className="bg_level_4">
+                    {
+                        gameStat === 1 ?
+                            < Confetti
+                                width={width}
+                                height={height}
+                            /> : null
+                    }
+                    <div className="Hangman container">
+                        <h2 className="questionBox"><div style={{ textSize: "15px" }}>{this.state.ques}</div></h2>
+                        <div className="score">
+                            <div style={{ fontSize: "20px" }}>Bandages : {4 - this.state.mistake}</div>
                         </div>
-                        {/* part 2 phrase */}
-                        <div>
-                            {
-                                !gameOver ?
-                                    <span style={this.phraseStyle1}>{this.gussedWord()}</span> :
-                                    null
-                                // <p >{this.state.answer}</p>
-                            }
-                        </div>
+                        <div className="maingrid">
 
-                        {/* part 3 keypad */}
+                            {/* part1 baloon */}
+                            <Balloon gamestat={gameStat} img={this.props.images[this.state.mistake]} />
+                            {/* part 2 phrase */}
+                            <div>
+                                {
+                                    !gameOver ?
+                                        <span style={this.phraseStyle1}>{this.gussedWord()}</span> :
+                                        null
+                                    // <p >{this.state.answer}</p>
+                                }
+                            </div>
 
-                        <div style={{ marginTop: "20px" }}>
-                            {
-                                gameStat === 1 ?
-                                <Arrow stage={"Stage3"} redirect={"stage3"} />
+                            {/* part 3 keypad */}
 
-                                    :
-                                    gameStat === 0 ?
-                                        <h1>You Lost</h1> :
-                                        <div className="words" >
-                                            {gameStat}
-                                        </div>
-                            }
+                            <div style={{ marginTop: "20px" }}>
+                                {
+                                    gameStat === 1 ?
+                                        <Arrow stage={"Stage3"} redirect={"stage3"} />
+                                        :
+                                        gameStat === 0 ?
+                                            <h1>You Lost</h1> :
+                                            <div className="words" >
+                                                {gameStat}
+                                            </div>
+                                }
 
-                            {
-                                gameStat === 1 ?
-                                    null :
-                                    gameStat === 0 ?
+                                {
+                                    gameStat === 1 ?
                                         null :
-                                        <HintButton hint={this.state.hint} />
-                            }
+                                        gameStat === 0 ?
+                                            null :
+                                            <HintButton hint={this.state.hint} />
+                                }
 
-
-                            {
-                                gameStat === 0 ?
-                                    <Link to="/"><button
-                                        className="submit-button">
-                                        &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
+                                {
+                                    gameStat === 0 ?
+                                        <Link to="/"><button
+                                            className="submit-button">
+                                            &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
                                     </button>
-                                    </Link> :
-                                    null
-                            }
+                                        </Link> :
+                                        null
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
-
-            </>
+            </div>
         )
     }
 }
 
 export default Level4;
-//zinda hai ky

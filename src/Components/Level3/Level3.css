@@ -1,5 +1,5 @@
 
-.bg{
+.bg_level_3{
   background-image: url("../../img/mobilebgland.png");
   background-position: bottom;
   background-repeat: repeat-x;
@@ -13,15 +13,15 @@
 }
 
 
- .cloud__class{
+ .cloud_class_level_3{
   width: 100%;
   background: url("../../img/mobilebgsky.png") repeat 0 0;
   animation: slide 8s linear infinite;
   box-sizing: border-box;
 }
 @keyframes slide {
-  from { background-position: 0 600px; }
-  to { background-position: 0 0; }
+  from { background-position: 0 0; }
+  to { background-position: 0 600px; }
 }
 
 .submit-button1{
@@ -61,12 +61,7 @@
   font-size: x-large;
 }
 
-.balloon > img{
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    
-}
+
 .wrong{
   border: 2px solid red;
   
@@ -93,62 +88,6 @@
   border-radius: 40px;
   background-color: rgba(211, 211, 211, 0.2)
 }
-
-
-@keyframes parachute {
-  0% {
-      transform: rotate(40deg)
-                 translate(0, 150px);
-              
-    }
-  
-    30% {
-      transform: 
-                  rotate(-20deg)
-                 translate(50px, 250px);
-    }
-    60% {
-      transform: 
-                  rotate(20deg)
-                 translate(100px, 300px); 
-    }
-    
-    90% {
-      transform: 
-        rotate(0deg)
-      translate(155px, 355px);
-    }
-  /*  100% {
-      transform: 
-        translate(155px, 355px);
-    }*/
-  }
-  
-  .test {
-    /* position: absolute; */
-    animation: parachute 5s ease-in-out;
-    -webkit-animation-fill-mode: forwards;
-  }
-
-
-
-
-.balloon > img{
-  -webkit-animation: mover 1s infinite  alternate;
-    animation: mover 1s infinite  alternate;
-}
-
-
-@-webkit-keyframes mover {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
-}
-@keyframes mover {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-10px); }
-}
-
-
 
 .Hangman{
     width: 100%;

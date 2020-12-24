@@ -13,17 +13,17 @@ function App() {
   return (
     <Switch>
 
-      {/* stage1 */}
-      <Route path="/level5">
+      {/* stage3 */}
+      <Route path="/level3">
         <div className="cloud__class">
           <div className="bg top">
-            <Level5 />
+            <Level3 />
           </div>
         </div>
       </Route>
-      {/* stage1 homepage */}
-      <Route path="/stage1">
-        <Stage1 />
+      {/* stage3 homepage */}
+      <Route path="/stage3">
+        <Stage3 />
       </Route>
 
       {/* stage2 */}
@@ -39,19 +39,15 @@ function App() {
         <Stage2 />
       </Route>
 
-      {/* stage3 */}
-      <Route path="/level3">
-        <div className="cloud__class">
-          <div className="bg top">
-            <Level3 />
-          </div>
-        </div>
-      </Route>
-      {/* stage3 homepage */}
-      <Route path="/stage3">
-        <Stage3 />
-      </Route>
 
+      {/* stage1 */}
+      <Route path="/level5">
+        <Level5 />
+      </Route>
+      {/* stage1 homepage */}
+      <Route path="/stage1">
+        <Stage1 />
+      </Route>
       {/* default */}
       <Route path="/" exact={true}>
         <div className="cloud__class__1">
