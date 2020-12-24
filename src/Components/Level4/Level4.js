@@ -32,7 +32,8 @@ class Level4 extends Component {
             answer: rp.phrase.toUpperCase(),
             hint: rp.hint,
             visible: true,
-            ques: rp.ques
+            ques: rp.ques,
+            reset: null,
         }
     }
 
@@ -109,6 +110,17 @@ class Level4 extends Component {
         if (gameOver) {
             document.querySelector(".cloud_class_level_4").style.animationDirection = "reverse";
             document.querySelector(".cloud_class_level_4").style.animationDuration = "600ms";
+            
+            setTimeout(() => {
+                this.setState({
+                    reset: <Link to="/">
+                        <button
+                            className="submit-button">
+                            &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
+                    </button>
+                    </Link>
+                })
+            }, 5000);
             gameStat = 0;
         }
         return (
@@ -164,11 +176,7 @@ class Level4 extends Component {
 
                                 {
                                     gameStat === 0 ?
-                                        <Link to="/"><button
-                                            className="submit-button">
-                                            &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
-                                    </button>
-                                        </Link> :
+                                    <> {this.state.reset} </>:
                                         null
                                 }
                             </div>
