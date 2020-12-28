@@ -22,16 +22,17 @@
         rotate(0deg)
     translate(155px, 355px);
     }
-/*  100% {
+  100% {
         transform: 
-        translate(155px, 355px);
-    }*/
+        rotate(-20deg)
+        translate(500px, 800px);
+    }
 }
 
 .balloonafter {
     /* position: absolute; */
-    animation: parachute 5s ease-in-out;
-    -webkit-animation-fill-mode: forwards;
+    animation: parachute 5s ease-out;
+    animation-fill-mode: forwards;
 }
 
 
