@@ -10,6 +10,7 @@ import HintButton from '../HintButton';
 
 import { Link } from 'react-router-dom';
 import Balloon from '../Balloon/Balloon';
+import TimeDuration from '../../TimerDuration/TimeDuration';
 
 class Level3 extends Component {
 
@@ -134,7 +135,7 @@ class Level3 extends Component {
                     <div className="Hangman container">
                         <h2 className="questionBox"><div style={{ textSize: "15px" }}>{this.state.ques}</div></h2>
                         <div className="score">
-                            <div style={{ fontSize: "20px" }}>Bandages : {3 - this.state.mistake}</div>
+                            <div style={{ fontSize: "20px", textAlign:"left",width:"50%"}}>Bandages : {5 - this.state.mistake}</div><TimeDuration time={300000} />
                         </div>
                         <div className="maingrid">
 

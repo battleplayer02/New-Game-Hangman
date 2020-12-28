@@ -133,6 +133,7 @@
 }
 
 .score{
+    display: flex;
     background-color: transparent;
     color: #000000;
     font-weight: bolder;
