@@ -1,21 +1,38 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import './Level3.css';
 import Confetti from 'react-confetti'
-import { randWord } from './Words.js';
+import {randWord} from './Words.js';
 import step0 from './img/0.png';
 import step1 from './img/1.png';
 import step2 from './img/2.png';
 import step3 from './img/3.png';
 import HintButton from '../HintButton';
 
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Balloon from '../Balloon/Balloon';
 import TimeDuration from '../../TimerDuration/TimeDuration';
 
 class Level3 extends Component {
 
-    phraseStyle1 = { letterSpacing: "4px", background: "rgba(211, 211, 211, 0.2)", borderRadius: "5px", fontSize: "25px", textAlign: "center", fontWeight: "500" }
-    phraseStyle2 = { background: "rgba(211, 211, 211, 0.2)", borderRadius: "15px", fontSize: "25px", textAlign: "center", fontWeight: "500" }
+    phraseStyle1 = {
+        padding: "3px",
+        letterSpacing: "4px",
+        background: "rgba(211, 211, 211, 0.2)",
+        borderRadius: "5px",
+        fontSize: "25px",
+        textAlign: "center",
+        fontWeight: "500",
+        color: "white"
+    }
+    phraseStyle2 = {
+        padding: "3px",
+        background: "rgba(211, 211, 211, 0.2)",
+        borderRadius: "15px",
+        fontSize: "25px",
+        textAlign: "center",
+        fontWeight: "500",
+        color: "white"
+    }
 
     static defaultProps = {
         maxWrong: 3,
@@ -82,8 +99,8 @@ class Level3 extends Component {
     }
 
     componentDidMount() {
-
     }
+
     render() {
 
         var width = window.innerWidth
@@ -107,77 +124,88 @@ class Level3 extends Component {
             gameStat = 1;
         }
         if (gameOver) {
-            document.querySelector(".cloud_class_level_3").style.animationDirection = "reverse";
-            document.querySelector(".cloud_class_level_3").style.animationDuration = "600ms";
-            
+            document.querySelector(".stars").style.animationDirection = "reverse";
+            document.querySelector(".stars").style.animationDuration = "600ms";
+
             setTimeout(() => {
                 this.setState({
                     reset: <Link to="/">
                         <button
                             className="submit-button">
                             &nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;
-                    </button>
+                        </button>
                     </Link>
                 })
             }, 5000);
             gameStat = 0;
         }
         return (
-            <div className="cloud_class_level_3">
-                <div className="bg_level_3">
-                    {
-                        gameStat === 1 ?
-                            < Confetti
-                                width={width}
-                                height={height}
-                            /> : null
-                    }
-                    <div className="Hangman container">
-                        <h2 className="questionBox"><div style={{ textSize: "15px" }}>{this.state.ques}</div></h2>
-                        <div className="score">
-                            <div style={{ fontSize: "20px", textAlign:"left",width:"50%"}}>Bandages : {5 - this.state.mistake}</div><TimeDuration time={300000} />
-                        </div>
-                        <div className="maingrid">
+            <div className="stars">
+                <div className="twinkling">
+                    <div className="clouds">
+                        {
+                            gameStat === 1 ?
+                                < Confetti
+                                    width={width}
+                                    height={height}
+                                /> : null
+                        }
+                        <div className="Hangman container">
+                            <h2 className="questionBox_level3">
+                                <div style={{textSize: "15px", color: "white"}}>{this.state.ques}</div>
+                            </h2>
+                            <div className="score">
+                                <div
+                                    style={{fontSize: "20px", textAlign: "left", width: "50%", color: "white"}}>Bandages
+                                    : {3 - this.state.mistake}
+                                </div>
 
-                            {/* part1 baloon */}
-                            <Balloon gamestat={gameStat} img={this.props.images[this.state.mistake]} />
-                            {/* part 2 phrase */}
-                            <div>
-                                {
-                                    !gameOver ?
-                                        <span style={this.phraseStyle1}>{this.gussedWord()}</span> :
-                                        null
-                                    // <p >{this.state.answer}</p>
-                                }
+                                <TimeDuration colortxt="white" time={300000}/>
+
+
                             </div>
+                            <div className="maingrid">
 
-                            {/* part 3 keypad */}
+                                {/* part1 baloon */}
+                                <Balloon gamestat={gameStat} img={this.props.images[this.state.mistake]}/>
+                                {/* part 2 phrase */}
+                                <div>
+                                    {
+                                        !gameOver ?
+                                            <span style={this.phraseStyle1}>{this.gussedWord()}</span> :
+                                            null
+                                        // <p >{this.state.answer}</p>
+                                    }
+                                </div>
 
-                            <div style={{ marginTop: "20px" }}>
-                                {
-                                    gameStat === 1 ?
-                                        <h2>You Won</h2>
-                                        :
-                                        gameStat === 0 ?
-                                            <h1>You Lost</h1> :
-                                            <div className="words" >
-                                                {gameStat}
-                                            </div>
-                                }
+                                {/* part 3 keypad */}
 
-                                {
-                                    gameStat === 1 ?
-                                        null :
-                                        gameStat === 0 ?
+                                <div style={{marginTop: "20px"}}>
+                                    {
+                                        gameStat === 1 ?
+                                            <h2 style={{color: "white"}}>You Won</h2>
+                                            :
+                                            gameStat === 0 ?
+                                                <h1 style={{color: "white"}}>You Lost</h1> :
+                                                <div className="words">
+                                                    {gameStat}
+                                                </div>
+                                    }
+
+                                    {
+                                        gameStat === 1 ?
                                             null :
-                                            <HintButton hint={this.state.hint} />
-                                }
+                                            gameStat === 0 ?
+                                                null :
+                                                <HintButton hint={this.state.hint}/>
+                                    }
 
-                                {
-                                    gameStat === 0 ?
-                                    <> {this.state.reset} </> :
-                                        null
-                                }
+                                    {
+                                        gameStat === 0 ?
+                                            <> {this.state.reset} </> :
+                                            null
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -1,116 +1,235 @@
+@keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
 
-.bg_level_3{
-  background-image: url("../../img/mobilebgland.png");
-  background-position: bottom;
-  background-repeat: repeat-x;
-  background-size: auto 780px;
-  height: 100vh;
-  margin-bottom: 0px;
-  width: 100vw;
-  animation: slide 10s infinite;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+@-webkit-keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@-moz-keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@-ms-keyframes move-twink-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -10000px 5000px;
+    }
+}
+
+@keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+@-webkit-keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+@-moz-keyframes move-clouds-back {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+@-ms-keyframes move-clouds-back {
+    from {
+        background-position: 0;
+    }
+    to {
+        background-position: 10000px 0;
+    }
+}
+
+.stars, .twinkling, .clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.stars {
+    animation: slide 8s linear infinite;
+    background: #000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
+    z-index: 0;
+}
+
+.twinkling {
+    background: transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+    z-index: 1;
+
+    -moz-animation: move-twink-back 200s linear infinite;
+    -ms-animation: move-twink-back 200s linear infinite;
+    -o-animation: move-twink-back 200s linear infinite;
+    -webkit-animation: move-twink-back 200s linear infinite;
+    animation: move-twink-back 200s linear infinite;
+}
+
+.clouds {
+    background: transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center;
+    z-index: 3;
+
+    -moz-animation: move-clouds-back 200s linear infinite;
+    -ms-animation: move-clouds-back 200s linear infinite;
+    -o-animation: move-clouds-back 200s linear infinite;
+    -webkit-animation: move-clouds-back 200s linear infinite;
+    animation: move-clouds-back 200s linear infinite;
 }
 
 
- .cloud_class_level_3{
-  width: 100%;
-  background: url("../../img/mobilebgsky.png") repeat 0 0;
-  animation: slide 8s linear infinite;
-  box-sizing: border-box;
+.bg_level_3 {
+    background-image: url("../../img/mobilebgland.png");
+    background-position: bottom;
+    background-repeat: repeat-x;
+    background-size: auto 780px;
+    height: 100vh;
+    margin-bottom: 0px;
+    width: 100vw;
+    animation: slide 10s infinite;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
+
+
+.cloud_class_level_3 {
+    width: 100%;
+    background: url("../../img/mobilebgsky.png") repeat 0 0;
+    animation: slide 8s linear infinite;
+    box-sizing: border-box;
+}
+
 @keyframes slide {
-  from { background-position: 0 0; }
-  to { background-position: 0 600px; }
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 600px;
+    }
 }
 
-.submit-button1{
-  background: black;
-  border: black solid;
-  margin-top: 15px;
-  padding: 3px;
-  color: white;
-  font-weight:700;
-  width: 40px;
-  height: 40px;
-  transition: all .35s;
+.submit-button1 {
+    background: white;
+    border: black solid;
+    margin-top: 15px;
+    padding: 3px;
+    color: black;
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    transition: all .35s;
 
-  border-radius: 99px;
+    border-radius: 99px;
 }
 
-.submit-button1:hover{
+.submit-button1:hover {
+    background: black;
+    color: white;
+
+}
+
+
+.hint-class {
     background: white;
     color: black;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 4px;
+    width: 405px;
+    font-size: large;
+    border: 1px solid black;
+    /* padding: 15px 5px; */
+    font-weight: 600;
+    margin-top: 15px;
+    transition: all 100ms;
+}
 
+.hint-class:hover {
+    font-size: x-large;
 }
 
 
-.hint-class{
-  display: inline-block;
-  border-radius: 4px;
-  width: 405px;
-  font-size: large;
-  border: 1px solid black;
-  /* padding: 15px 5px; */
-  font-weight: 600;
-  margin-top: 15px;
-  transition: all 100ms;
+.wrong {
+    border: 2px solid red;
+
+    border-radius: 25px;
+    width: 100px;
+    margin-right: auto
 }
 
-.hint-class:hover{
-  font-size: x-large;
-}
-
-
-.wrong{
-  border: 2px solid red;
-  
-  border-radius:25px;
-  width:100px;
-  margin-right:auto
-}
-
-.correct{
-  border-radius:25px;
-  border: 2px solid green;
-  width:100px;
-  margin-left:auto
+.correct {
+    border-radius: 25px;
+    border: 2px solid green;
+    width: 100px;
+    margin-left: auto
 }
 
 .questionBox {
-  
-  width: 60%;
-  font-size: 20px;
-  padding-top: 15px;
-  font-weight: 500;
-  align-items: center;
-  justify-content: center;
-  border-radius: 40px;
-  background-color: rgba(211, 211, 211, 0.2)
+
+    width: 60%;
+    font-size: 20px;
+    padding-top: 15px;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    background-color: rgba(211, 211, 211, 0.2)
 }
 
-.Hangman{
+.Hangman {
     width: 100%;
 }
 
-.center{
+.center {
     display: flex;
     justify-content: center;
 }
 
-.button-alpha{
-  font-weight: 700;
-  background: white;
-  height: 37px;
-  width: 40px;
-  align-items: center;
+.button-alpha {
+    font-weight: 700;
+    background: white;
+    height: 37px;
+    width: 40px;
+    align-items: center;
     border-radius: 99px;
     border: none;
     font-size: 25px;
     transition: 100ms all ease;
 }
 
-.button-alpha:hover{
+.button-alpha:hover {
     height: 45px;
     width: 40px;
     color: white;
@@ -121,19 +240,18 @@
 }
 
 
-
-.words{
+.words {
     text-align: center;
     display: grid;
     align-items: center;
     justify-content: center;
     /* grid-gap: 5px; */
-    grid-template-columns: repeat(9,45px);
-    grid-template-rows: repeat(3,45px);
+    grid-template-columns: repeat(9, 45px);
+    grid-template-rows: repeat(3, 45px);
 }
 
-.score{
-  display: flex;
+.score {
+    display: flex;
     background-color: transparent;
     color: #000000;
     font-weight: bolder;
@@ -144,116 +262,117 @@
 
 }
 
-.maingrid{
-  justify-content: center;
-  display: grid;
-  grid-template-rows: auto auto auto auto;
-  grid-template-columns: 405px;
-  /* border: red solid; */
-}
-
-
-
-
-
-@media only screen and (max-width: 600px) {
-  .hint-class{
-    display: inline-block;
-    border-radius: 4px;
-    width: 345px;
-    border: 1px solid black;
-    /* padding: 0px 5px; */
-    /* margin: 10px; */
-  }
-
-  .maingrid{
+.maingrid {
     justify-content: center;
     display: grid;
     grid-template-rows: auto auto auto auto;
-    grid-template-columns: 345px;
+    grid-template-columns: 405px;
     /* border: red solid; */
-  }
-    .words{
+}
+
+
+@media only screen and (max-width: 600px) {
+    .hint-class {
+        display: inline-block;
+        border-radius: 4px;
+        width: 345px;
+        border: 1px solid black;
+        /* padding: 0px 5px; */
+        /* margin: 10px; */
+    }
+
+    .maingrid {
+        justify-content: center;
+        display: grid;
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: 345px;
+        /* border: red solid; */
+    }
+
+    .words {
         text-align: center;
         display: grid;
         align-items: center;
         justify-content: center;
-        grid-gap: 5px;    
-        grid-template-columns: repeat(9,35px);
-        grid-template-rows: repeat(3,35px);
+        grid-gap: 5px;
+        grid-template-columns: repeat(9, 35px);
+        grid-template-rows: repeat(3, 35px);
         font-size: 27px;
     }
-    .button-alpha{
-      
+
+    .button-alpha {
+
         background-color: #ffffff;
         font-weight: 600;
     }
-  }
+}
 
 
 .questionBox {
-  font-family: Arial, Helvetica, sans-serif;
-  position: relative;
-  top: 1vh;
-  height: 8vh;
-  width: 90%;
-  padding-top: 15px;
-  margin: 0 auto 0 auto;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20px;
-  background-color: rgba(211, 211, 211, 0.3)
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    top: 1vh;
+    height: 8vh;
+    width: 90%;
+    padding-top: 15px;
+    margin: 0 auto 0 auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background-color: rgba(211, 211, 211, 0.3)
 }
-
 
 
 @keyframes caret {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
 }
-.rodal-dialog{
+
+.rodal-dialog {
     background-color: skyblue;
 }
 
 
-.scroll-bg{
-  animation: slide 20s linear infinite;
+.scroll-bg {
+    animation: slide 20s linear infinite;
 }
 
-.submit-button{
-  background: #ffffff;
-  border: black solid;
-  margin-top: 15px;
-  padding: 3px;
-  color: black;
-  font-weight:700;
-  width: 150px;
-  height: 40px;
-  transition: all .35s;
+.submit-button {
+    background: #ffffff;
+    border: black solid;
+    margin-top: 15px;
+    padding: 3px;
+    color: black;
+    font-weight: 700;
+    width: 150px;
+    height: 40px;
+    transition: all .35s;
 
-  border-radius: 99px;
+    border-radius: 99px;
 }
 
-.submit-button:hover{
+.submit-button:hover {
     background: black;
     color: #fff;
 
 }
+
 .blur {
-  opacity: 0.1;
+    opacity: 0.1;
 }
+
 #canvas {
-  transition: all 0.5s ease;
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #ecf0f1;
-  z-index: 0;
+    transition: all 0.5s ease;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #ecf0f1;
+    z-index: 0;
 }
