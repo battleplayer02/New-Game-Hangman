@@ -16,10 +16,10 @@ export default class HintButton extends React.Component {
   render() {
     return (
       <div  style={{float:"left"}}>
-        {
+        {/* {
           this.state.toggle ? <span className="hint-class">{this.props.hint}</span>:null
         }
-        <button className="submit-button1" onClick={this.handelClick}>?</button>
+        <button className="submit-button1" onClick={this.handelClick}>?</button> */}
       </div>
     );
   }
